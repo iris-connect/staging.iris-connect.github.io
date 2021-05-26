@@ -1,1 +1,7 @@
 theme: jekyll-theme-cayman
+docs:
+
+- title: Index
+  url: index.html
+- title: Impressum
+  url: impressum.html
