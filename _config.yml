@@ -1,3 +1,5 @@
 header_pages:
   - index.md
   - impressum.md
+
+theme: jekyll-theme-dinky
