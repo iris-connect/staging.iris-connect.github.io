@@ -3,19 +3,13 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku/proxy-service/installation</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku/eps-service</loc>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku/proxy-service/configuration</loc>
   </url>
   <url>
     <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku/service-directory</loc>
   </url>
   <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku/service-directory/configuration</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku/proxy-service</loc>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku</loc>
   </url>
   <url>
     <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku/service-directory/installation</loc>
@@ -24,12 +18,18 @@
     <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku/getting-started</loc>
   </url>
   <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku</loc>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku/proxy-service</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku/eps-service</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku/proxy-service/installation</loc>
   </url>
   <url>
     <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku/kontakt</loc>
   </url>
   <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku/proxy-service/configuration</loc>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/de/doku/service-directory/configuration</loc>
   </url>
 </urlset>
