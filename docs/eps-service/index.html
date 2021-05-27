@@ -8,8 +8,8 @@
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EPS documentation (hp.site-title) | Getting Started</title>
-  <link rel="stylesheet" type="text/css" href="/docs/static/css/main.css">
+  <title>EPS documentation | EPS Service - Overview</title>
+  <link rel="stylesheet" type="text/css" href="/eps/docs/static/css/main.css">
   <script>
   window.MathJax = {
     tex: {
@@ -20,7 +20,7 @@
     }
   };
   </script>
-  <script src="/docs/static/js/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+  <script src="/eps/docs/static/js/mathjax/tex-chtml.js" id="MathJax-script" async></script>
   <style type="text/css">pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -133,8 +133,8 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
     <div class="side-menu" id="side-menu" data-toggle-class="is-active">
       <aside class="menu">
         <p class="menu-label" style="text-align:center">
-            <a href="/index.html">
-              EPS documentation (hp.site-title)
+            <a href="/eps/docs">
+              EPS documentation
               
             </a>
         </p>
@@ -144,7 +144,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/index.html">Start</a>
+                <a href="/eps/docs">Start</a>
             
             </li>
         
@@ -152,7 +152,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/getting-started.html">Getting Started</a>
+                <a href="/eps/docs/getting-started">Getting Started</a>
             
             </li>
         
@@ -166,14 +166,14 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a class="" href="#" data-toggle="collapse" data-target="page-eps-nav">EPS Service</a>
-                <ul class="is-hidden" id="page-eps-nav">
+                <a class="is-active" href="#" data-toggle="collapse" data-target="page-eps-nav">EPS Service</a>
+                <ul class="" id="page-eps-nav">
                     
                     
         
             <li>
             
-                <a href="/eps-service/index.html">Overview</a>
+                <a href="/eps/docs/eps-service">Overview</a>
             
             </li>
         
@@ -195,7 +195,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/proxy-service/index.html">Overview</a>
+                <a href="/eps/docs/proxy-service">Overview</a>
             
             </li>
         
@@ -203,7 +203,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/proxy-service/installation.html">Installation</a>
+                <a href="/eps/docs/proxy-service/installation">Installation</a>
             
             </li>
         
@@ -211,7 +211,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/proxy-service/configuration.html">Configuration</a>
+                <a href="/eps/docs/proxy-service/configuration">Configuration</a>
             
             </li>
         
@@ -237,7 +237,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/service-directory/index.html">Overview</a>
+                <a href="/eps/docs/service-directory">Overview</a>
             
             </li>
         
@@ -245,7 +245,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/service-directory/installation.html">Installation</a>
+                <a href="/eps/docs/service-directory/installation">Installation</a>
             
             </li>
         
@@ -253,7 +253,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/service-directory/configuration.html">Configuration</a>
+                <a href="/eps/docs/service-directory/configuration">Configuration</a>
             
             </li>
         
@@ -272,7 +272,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/contact.html">Contact</a>
+                <a href="/eps/docs/contact">Contact</a>
             
             </li>
         
@@ -281,7 +281,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
     
     <li>
         <a href="#" data-toggle="collapse" data-target="menu-language-dropdown">
-            Languages (languages)
+            Languages
         </a>
         <ul id="menu-language-dropdown" class="is-hidden">
         
@@ -290,7 +290,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             
             <li>
-                <a class="is-open is-active" href="/getting-started.html">
+                <a class="is-open is-active" href="/eps/docs/eps-service">
                     English
                 </a>
             </li>
@@ -298,7 +298,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             
             <li>
-                <a class="" href="/de/getting-started.html">
+                <a class="" href="/eps/de/doku/eps-service">
                     Deutsch
                 </a>
             </li>
@@ -318,9 +318,9 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
             
     <div class="content markdown">
         
-<h1>Getting Started</h1>
+<h1>Integration</h1>
 
-<p>Integrating with the IRIS infrastructure using the EPS server is easy (we hope). First, you need to deploy the <code>eps</code> server together with the settings and certificates we've provided to you. This is as easy as downloading the latest <code>eps</code> version from our server, unpacking the settings archive we've provided you with and running</p>
+<p>Integrating with the IRIS infrastructure is easy (we hope). First, you need to deploy the <code>eps</code> server together with the settings and certificates we've provided to you. This is as easy as downloading the latest <code>eps</code> version from our server, unpacking the settings archive we've provided you with and running</p>
 
 <div class="codehilite"><pre><span></span><code><span class="nv">EPS_SETTINGS</span><span class="o">=</span>path/to/settings eps server run
 </code></pre></div>
@@ -417,6 +417,6 @@ eps-ls
 </div>
 
   </div>
-  <script defer type="text/javascript" src="/docs/static/js/bulma.js"></script>
+  <script defer type="text/javascript" src="/eps/docs/static/js/bulma.js"></script>
 </body>
 </html>

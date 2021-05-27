@@ -8,8 +8,8 @@
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EPS documentation (hp.site-title) | Service Directory - Installation</title>
-  <link rel="stylesheet" type="text/css" href="/docs/static/css/main.css">
+  <title>EPS documentation | Service Directory - Overview</title>
+  <link rel="stylesheet" type="text/css" href="/eps/docs/static/css/main.css">
   <script>
   window.MathJax = {
     tex: {
@@ -20,7 +20,7 @@
     }
   };
   </script>
-  <script src="/docs/static/js/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+  <script src="/eps/docs/static/js/mathjax/tex-chtml.js" id="MathJax-script" async></script>
   <style type="text/css">pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -133,8 +133,8 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
     <div class="side-menu" id="side-menu" data-toggle-class="is-active">
       <aside class="menu">
         <p class="menu-label" style="text-align:center">
-            <a href="/index.html">
-              EPS documentation (hp.site-title)
+            <a href="/eps/docs">
+              EPS documentation
               
             </a>
         </p>
@@ -144,7 +144,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/index.html">Start</a>
+                <a href="/eps/docs">Start</a>
             
             </li>
         
@@ -152,7 +152,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/getting-started.html">Getting Started</a>
+                <a href="/eps/docs/getting-started">Getting Started</a>
             
             </li>
         
@@ -173,7 +173,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/eps-service/index.html">Overview</a>
+                <a href="/eps/docs/eps-service">Overview</a>
             
             </li>
         
@@ -195,7 +195,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/proxy-service/index.html">Overview</a>
+                <a href="/eps/docs/proxy-service">Overview</a>
             
             </li>
         
@@ -203,7 +203,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/proxy-service/installation.html">Installation</a>
+                <a href="/eps/docs/proxy-service/installation">Installation</a>
             
             </li>
         
@@ -211,7 +211,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/proxy-service/configuration.html">Configuration</a>
+                <a href="/eps/docs/proxy-service/configuration">Configuration</a>
             
             </li>
         
@@ -237,7 +237,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/service-directory/index.html">Overview</a>
+                <a href="/eps/docs/service-directory">Overview</a>
             
             </li>
         
@@ -245,7 +245,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/service-directory/installation.html">Installation</a>
+                <a href="/eps/docs/service-directory/installation">Installation</a>
             
             </li>
         
@@ -253,7 +253,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/service-directory/configuration.html">Configuration</a>
+                <a href="/eps/docs/service-directory/configuration">Configuration</a>
             
             </li>
         
@@ -272,7 +272,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/contact.html">Contact</a>
+                <a href="/eps/docs/contact">Contact</a>
             
             </li>
         
@@ -281,7 +281,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
     
     <li>
         <a href="#" data-toggle="collapse" data-target="menu-language-dropdown">
-            Languages (languages)
+            Languages
         </a>
         <ul id="menu-language-dropdown" class="is-hidden">
         
@@ -290,7 +290,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             
             <li>
-                <a class="is-open is-active" href="/service-directory/installation.html">
+                <a class="is-open is-active" href="/eps/docs/service-directory">
                     English
                 </a>
             </li>
@@ -298,7 +298,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             
             <li>
-                <a class="" href="/de/service-directory/installation.html">
+                <a class="" href="/eps/de/doku/service-directory">
                     Deutsch
                 </a>
             </li>
@@ -318,7 +318,81 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
             
     <div class="content markdown">
         
-<p></p>
+<h1>Service Directory</h1>
+
+<p>The service directory is a central database that contains information about all operators in the IRIS ecosystem. It contains information about how operators can be reached and which services they provide.</p>
+
+<p>The directory allows EPS servers to determine whether and how they can connect to another operator. Operators that only have outgoing connectivity (e.g. <code>ga-leipzig</code> in the example above) can use the directory to learn that they might receive asynchronous responses from other operators (e.g. <code>ls-1</code>) and then open outgoing connections to these operators through which they can receive replies. EPS servers can also use the service directory to determine whether they should accept a message from a given operator.</p>
+
+<p>The service directory implements a group-based permissions mechanism. Currently, only <code>yes/no</code> permissions exist (i.e. a member of a given group either can or cannot call a given service method). More fine-grained permissions (e.g. a contact tracing provider can only edit its own entries in the "locations" service) need to be implemented by the services themselves. For that purpose, the EPS server makes information about the calling peer available to the services via a special parameter (<code>_caller</code>) that gets passed along with the other RPC method parameters. This structure also contains the current entry of the caller from the service directory, making it easy for the called service to identify and authorize the caller.</p>
+
+<h2>Service Directory API</h2>
+
+<p>The EPS server package also provides a <code>sd</code> API server command that opens a JSON-RPC server which distributes the service directory.</p>
+
+<div class="codehilite"><pre><span></span><code><span class="nv">SD_SETTINGS</span><span class="o">=</span>settings/dev/roles/sd-1 sd run
+</code></pre></div>
+
+<p>By default, this will store and retrieve change records from a file located at <code>/tmp/service-directory.records</code>. To reset the service directory, simply delete this file.</p>
+
+<h2>Signature Schema</h2>
+
+<p>All changes in the service directory are cryptographically signed. For this, every actor in the EPS system has a pair of ECDSA keys and an accompanying certificate. The service directory is constructed from a series of <strong>change records</strong>. Each change record contains the name of an <strong>operator</strong>, a <strong>section</strong> and the actual data that should be changed.</p>
+
+<h3>Submitting Change records</h3>
+
+<p>Change records can be submitted to the service directory via the JSON-RPC API. The <code>eps</code> CLI provides a function for this via the <code>sd submit-records</code>:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="nv">EPS_SETTINGS</span><span class="o">=</span>settings/dev/roles/hd-1 eps sd submit-records settings/dev/directory/001_base.json
+</code></pre></div>
+
+<p>You can also reset the service directory by specifying the <code>--reset</code> flag:</p>
+
+<pre><code>EPS_SETTINGS=settings/dev/roles/hd-1 eps sd submit-records --reset settings/dev/directory/001_base.json
+</code></pre>
+
+<p><strong>Warning:</strong> This will erase all previous records from the service directory. Only operators with an <code>sd-admin</code> role can do this.</p>
+
+<h3>Retrieving entries and records</h3>
+
+<p>To retrieve change records and entries from the service directory API you can use the <code>getRecords(since)</code>, <code>getEntries()</code> and <code>getEntry(name)</code> RPC calls, e.g. like this:</p>
+
+<div class="codehilite"><pre><span></span><code>curl --key settings/dev/certs/hd-1.key --cert settings/dev/certs/hd-1.crt --cacert settings/dev/certs/root.crt --resolve sd-1:3322:127.0.0.1 https://sd-1:3322/jsonrpc --header <span class="s2">&quot;Content-Type: application/json&quot;</span> --data <span class="s1">&#39;{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;getRecords&quot;, &quot;params&quot;: {&quot;since&quot;: 0}}&#39;</span>
+</code></pre></div>
+
+<h3>Signing Data</h3>
+
+<p>The <code>sdh</code> tool includes a <code>sign</code> command that allows us to sign arbitrary JSON data. It uses the signing signatures generated by the <code>make certs</code> Make command. For example, to sign a JSON file, simply use</p>
+
+<pre><code># define the SD settings
+export SD_SETTINGS=settings/dev/roles/private-proxy-1/sdh
+
+#sign a service directory entry
+sdh sign settings/dev/roles/private-proxy-1/sdh/entry.json
+</code></pre>
+
+<p>The output should e.g. look like this:</p>
+
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+  <span class="nt">&quot;signature&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="s2">&quot;67488385997031737348502334621054744305438368369525250023542608571625588981387&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;s&quot;</span><span class="p">:</span> <span class="s2">&quot;110557266089828975725234959115295121652814407881082688883738138814924173982570&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;-----BEGIN CERTIFICATE-----\nMIIC1TCCAb2gAwIBAgIUe3+081Bi4Z0DXDdeBhfZZOAs4OwwDQYJKoZIhvcNAQEL\nBQAwaTELMAkGA1UEBhMCREUxDzANBgNVBAgMBkJlcmxpbjEPMA0GA1UEBwwGQmVy\nbGluMQ0wCwYDVQQKDARJUklTMQswCQYDVQQLDAJJVDEcMBoGA1UEAwwTVGVzdGlu\nZy1EZXZlbG9wbWVudDAeFw0yMTA1MTExMTMzNDBaFw0yMjA5MjMxMTMzNDBaMGUx\nCzAJBgNVBAYTAkRFMQ8wDQYDVQQIDAZCZXJsaW4xDzANBgNVBAcMBkJlcmxpbjEN\nMAsGA1UECgwESVJJUzELMAkGA1UECwwCSVQxGDAWBgNVBAMMD3ByaXZhdGUtcHJv\neHktMTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABLHlILI5POvEDJc96W0dbag7\nFt8BVmitGqwS5jarYRwOUe/PiQ8tMBkMw9X/2U8G1qGYQb/CiRDh1DDy/Eh/mGKj\nRDBCMDMGA1UdEQQsMCqCD3ByaXZhdGUtcHJveHktMYIXKi5wcml2YXRlLXByb3h5\nLTEubG9jYWwwCwYDVR0PBAQDAgeAMA0GCSqGSIb3DQEBCwUAA4IBAQAmUESzD1ls\nmpECtRlinhiUduif9nVddtLeW/Ui86PHkS50vjSOVHY7ZHrfWbFB4/p4bwm8Sp1/\npFHx4WyuHiow5Ah3HV9afDcgyWBd1V8ijIFOlNF27u/caVsa9gV7iDVJ+6mBXKkf\nCgNI2bA2WoOVXQMwRoow4vSYrVAdM/Eyq8PHYOHkGqdd4uASG5df4vE+gnB2z9WD\nFuxkVYkncVP5OB+N7EAkQrVjrITdiSN0yYAVWFKz1IEnPF7GRW6KsPHW9lJeePeD\n1gLNh2KF6drrXT2PIIYVB31uepSoCqFnUUDcC/PX0qHu8jilvr/pTzhFUWbuX+Ja\nfaIRxqWB0frZ\n-----END CERTIFICATE-----\n&quot;</span>
+  <span class="p">},</span>
+  <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="nt">&quot;foo&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;private-proxy-1&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p>Before importing such data, we can check the signature using the <code>verify</code> command (you need to specify the expected <code>name</code> of the signer):</p>
+
+<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">SD_SETTINGS</span><span class="o">=</span>settings/dev/roles/sd-1/sdh
+sdh verify signed.json private-proxy-1
+</code></pre></div>
+
+<p>If the signature is valid the exit code will be <code>0</code>, otherwise <code>1</code>.</p>
 
 
     </div>
@@ -328,6 +402,6 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
 </div>
 
   </div>
-  <script defer type="text/javascript" src="/docs/static/js/bulma.js"></script>
+  <script defer type="text/javascript" src="/eps/docs/static/js/bulma.js"></script>
 </body>
 </html>
