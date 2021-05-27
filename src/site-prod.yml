@@ -1,9 +1,9 @@
 $include:
   - site.yml
   - site-i18n.yml
-path: /eps/
+path: /pages_smple/
 static-path: docs/static
-url: https://iris-connect.github.io/eps/docs
+url: https://arrol.github.io/pages_smple/docs
 # we generate links without extensions as nginx rewrites those URLs automatically
 hide-href-extensions: ['/index.html', 'index.html', '.html']
 context:
