@@ -16,7 +16,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Checkout Submodules
-        run: git submodule update --init --recursive
+        run: git submodule update --remote --recursive
       - name: use Node.js ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2
         with:
