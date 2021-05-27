@@ -10,9 +10,9 @@ pages:
   src: de/getting-started.md
   title: Erste Schritte
 - name: submodule1
-  title|t: Submodule1
-  navtitle|t: Submodule1
+  navtitle: Submodule1
   src: sub1/de/hello.md
+  title: Submodule1
 - children: []
   name: system
   slug: system

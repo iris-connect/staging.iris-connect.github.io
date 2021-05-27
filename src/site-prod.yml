@@ -2,7 +2,7 @@ $include:
   - site.yml
   - site-i18n.yml
 path: /pages_smple/
-static-path: docs/static
+static-path: doku/static
 url: https://arrol.github.io/pages_smple/docs
 # we generate links without extensions as nginx rewrites those URLs automatically
 hide-href-extensions: ['/index.html', 'index.html', '.html']
