@@ -8,8 +8,8 @@
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EPS-Dokumentation | Service Directory - Übersicht</title>
-  <link rel="stylesheet" type="text/css" href="/pages_smple/doku/static/css/main.css">
+  <title>EPS-Dokumentation | Service Directory - Installation</title>
+  <link rel="stylesheet" type="text/css" href="/pages_smple/static/css/main.css">
   <script>
   window.MathJax = {
     tex: {
@@ -20,7 +20,7 @@
     }
   };
   </script>
-  <script src="/pages_smple/doku/static/js/mathjax/tex-chtml.js" id="MathJax-script" async></script>
+  <script src="/pages_smple/static/js/mathjax/tex-chtml.js" id="MathJax-script" async></script>
   <style type="text/css">pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
 span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -133,7 +133,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
     <div class="side-menu" id="side-menu" data-toggle-class="is-active">
       <aside class="menu">
         <p class="menu-label" style="text-align:center">
-            <a href="/pages_smple/doku">
+            <a href="/pages_smple">
               EPS-Dokumentation
               
             </a>
@@ -144,7 +144,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/pages_smple/doku">Start</a>
+                <a href="/pages_smple">Start</a>
             
             </li>
         
@@ -152,7 +152,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/pages_smple/doku/getting-started">Erste Schritte</a>
+                <a href="/pages_smple/getting-started">Erste Schritte</a>
             
             </li>
         
@@ -160,7 +160,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/pages_smple/doku/hello">Submodule1</a>
+                <a href="/pages_smple/hello">Submodule1</a>
             
             </li>
         
@@ -181,7 +181,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/pages_smple/doku/eps-service">Übersicht</a>
+                <a href="/pages_smple/eps-service">Übersicht</a>
             
             </li>
         
@@ -203,7 +203,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/pages_smple/doku/proxy-service">Übersicht</a>
+                <a href="/pages_smple/proxy-service">Übersicht</a>
             
             </li>
         
@@ -211,7 +211,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/pages_smple/doku/proxy-service/installation">Installation</a>
+                <a href="/pages_smple/proxy-service/installation">Installation</a>
             
             </li>
         
@@ -219,7 +219,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/pages_smple/doku/proxy-service/configuration">Konfiguration</a>
+                <a href="/pages_smple/proxy-service/configuration">Konfiguration</a>
             
             </li>
         
@@ -245,7 +245,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/pages_smple/doku/service-directory">Übersicht</a>
+                <a href="/pages_smple/service-directory">Übersicht</a>
             
             </li>
         
@@ -253,7 +253,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/pages_smple/doku/service-directory/installation">Installation</a>
+                <a href="/pages_smple/service-directory/installation">Installation</a>
             
             </li>
         
@@ -261,7 +261,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/pages_smple/doku/service-directory/configuration">Konfiguration</a>
+                <a href="/pages_smple/service-directory/configuration">Konfiguration</a>
             
             </li>
         
@@ -280,7 +280,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
         
             <li>
             
-                <a href="/pages_smple/doku/kontakt">Kontakt</a>
+                <a href="/pages_smple/kontakt">Kontakt</a>
             
             </li>
         
@@ -298,7 +298,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
 <!--        -->
 <!--            -->
 <!--            <li>-->
-<!--                <a class="is-open is-active" href="/pages_smple/doku/service-directory">-->
+<!--                <a class="is-open is-active" href="/pages_smple/service-directory/installation">-->
 <!--                    Deutsch-->
 <!--                </a>-->
 <!--            </li>-->
@@ -318,81 +318,7 @@ if (localStorage.getItem("translation-notice") === null && notice !== null){
             
     <div class="content markdown">
         
-<h1>Service-Verzeichnis</h1>
-
-<p>Das Dienstverzeichnis ist eine zentrale Datenbank, die Informationen über alle Betreiber im IRIS-Ökosystem enthält. Es enthält Informationen darüber, wie die Betreiber erreicht werden können und welche Dienste sie anbieten.</p>
-
-<p>Mit Hilfe des Verzeichnisses können EPS-Server feststellen, ob und wie sie sich mit einem anderen Betreiber verbinden können. Betreiber, die nur über ausgehende Verbindungen verfügen (z. B. <code>ga-leipzig</code> im obigen Beispiel), können das Verzeichnis verwenden, um zu erfahren, dass sie möglicherweise asynchrone Antworten von anderen Betreibern (z. B. <code>ls-1</code>) erhalten und dann ausgehende Verbindungen zu diesen Betreibern öffnen, über die sie Antworten erhalten können. EPS-Server können das Dienstverzeichnis auch verwenden, um festzustellen, ob sie eine Nachricht von einem bestimmten Betreiber annehmen sollen.</p>
-
-<p>Das Dienstverzeichnis implementiert einen gruppenbasierten Berechtigungsmechanismus. Derzeit existieren nur <code>yes/no</code> Berechtigungen (d. h. ein Mitglied einer bestimmten Gruppe kann eine bestimmte Dienstmethode entweder aufrufen oder nicht). Feinkörnigere Berechtigungen (z. B. kann ein Anbieter von Kontaktverfolgungen nur seine eigenen Einträge im Dienst "Standorte" bearbeiten) müssen von den Diensten selbst implementiert werden. Zu diesem Zweck stellt der EPS-Server den Diensten Informationen über die aufrufende Gegenstelle über einen speziellen Parameter (<code>_caller</code>) zur Verfügung, der zusammen mit den anderen RPC-Methodenparametern übergeben wird. Diese Struktur enthält auch den aktuellen Eintrag des Aufrufers aus dem Dienstverzeichnis, was es dem aufgerufenen Dienst erleichtert, den Aufrufer zu identifizieren und zu autorisieren.</p>
-
-<h2>Dienstverzeichnis-API</h2>
-
-<p>Das EPS-Serverpaket bietet auch einen <code>sd</code> API-Server-Befehl, der einen JSON-RPC-Server öffnet, der das Dienstverzeichnis verteilt.</p>
-
-<div class="codehilite"><pre><span></span><code><span class="nv">SD_SETTINGS</span><span class="o">=</span>settings/dev/roles/sd-1 sd run
-</code></pre></div>
-
-<p>Standardmäßig werden damit Änderungsdatensätze in einer Datei gespeichert und abgerufen, die sich unter <code>/tmp/service-directory.records</code> befindet. Um das Dienstverzeichnis zurückzusetzen, löschen Sie einfach diese Datei.</p>
-
-<h2>Signatur-Schema</h2>
-
-<p>Alle Änderungen im Dienstverzeichnis werden kryptografisch signiert. Dazu besitzt jeder Akteur im EPS-System ein Paar ECDSA-Schlüssel und ein dazugehöriges Zertifikat. Das Serviceverzeichnis ist aus einer Reihe von <strong>Änderungsdatensätzen</strong> aufgebaut. Jeder Änderungssatz enthält den Namen eines <strong>Akteurs</strong>, einen <strong>Abschnitt</strong> und die eigentlichen Daten, die geändert werden sollen.</p>
-
-<h3>Einreichen von Änderungsdatensätzen</h3>
-
-<p>Änderungsdatensätze können über die JSON-RPC-API an das Dienstverzeichnis übermittelt werden. Die <code>eps</code> CLI bietet dafür eine Funktion über die <code>sd submit-records</code> :</p>
-
-<div class="codehilite"><pre><span></span><code><span class="nv">EPS_SETTINGS</span><span class="o">=</span>settings/dev/roles/hd-1 eps sd submit-records settings/dev/directory/001_base.json
-</code></pre></div>
-
-<p>Sie können das Dienstverzeichnis auch zurücksetzen, indem Sie das Flag <code>--reset</code> angeben:</p>
-
-<pre><code>EPS_SETTINGS=settings/dev/roles/hd-1 eps sd submit-records --reset settings/dev/directory/001_base.json
-</code></pre>
-
-<p><strong>Warnung:</strong> Dadurch werden alle vorherigen Datensätze aus dem Dienstverzeichnis gelöscht. Nur Bediener mit einer <code>sd-admin</code> Rolle können dies tun.</p>
-
-<h3>Abrufen von Einträgen und Datensätzen</h3>
-
-<p>Um Änderungsdatensätze und -einträge von der Dienstverzeichnis-API abzurufen, können Sie die RPC-Aufrufe <code>getRecords(since)</code>, <code>getEntries()</code> und <code>getEntry(name)</code> verwenden, z. B. wie folgt:</p>
-
-<div class="codehilite"><pre><span></span><code>curl --key settings/dev/certs/hd-1.key --cert settings/dev/certs/hd-1.crt --cacert settings/dev/certs/root.crt --resolve sd-1:3322:127.0.0.1 https://sd-1:3322/jsonrpc --header <span class="s2">&quot;Content-Type: application/json&quot;</span> --data <span class="s1">&#39;{&quot;jsonrpc&quot;: &quot;2.0&quot;, &quot;method&quot;: &quot;getRecords&quot;, &quot;params&quot;: {&quot;since&quot;: 0}}&#39;</span>
-</code></pre></div>
-
-<h3>Signierdaten</h3>
-
-<p>Das Tool <code>sdh</code> enthält einen Befehl <code>sign</code>, mit dem wir beliebige JSON-Daten signieren können. Er verwendet die Signaturen, die mit dem Befehl <code>make certs</code> Make erzeugt werden. Um zum Beispiel eine JSON-Datei zu signieren, verwenden Sie einfach</p>
-
-<pre><code># define the SD settings
-export SD_SETTINGS=settings/dev/roles/private-proxy-1/sdh
-
-#sign a service directory entry
-sdh sign settings/dev/roles/private-proxy-1/sdh/entry.json
-</code></pre>
-
-<p>Die Ausgabe sollte z. B. so aussehen:</p>
-
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-  <span class="nt">&quot;signature&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="s2">&quot;67488385997031737348502334621054744305438368369525250023542608571625588981387&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;s&quot;</span><span class="p">:</span> <span class="s2">&quot;110557266089828975725234959115295121652814407881082688883738138814924173982570&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;-----BEGIN CERTIFICATE-----\nMIIC1TCCAb2gAwIBAgIUe3+081Bi4Z0DXDdeBhfZZOAs4OwwDQYJKoZIhvcNAQEL\nBQAwaTELMAkGA1UEBhMCREUxDzANBgNVBAgMBkJlcmxpbjEPMA0GA1UEBwwGQmVy\nbGluMQ0wCwYDVQQKDARJUklTMQswCQYDVQQLDAJJVDEcMBoGA1UEAwwTVGVzdGlu\nZy1EZXZlbG9wbWVudDAeFw0yMTA1MTExMTMzNDBaFw0yMjA5MjMxMTMzNDBaMGUx\nCzAJBgNVBAYTAkRFMQ8wDQYDVQQIDAZCZXJsaW4xDzANBgNVBAcMBkJlcmxpbjEN\nMAsGA1UECgwESVJJUzELMAkGA1UECwwCSVQxGDAWBgNVBAMMD3ByaXZhdGUtcHJv\neHktMTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABLHlILI5POvEDJc96W0dbag7\nFt8BVmitGqwS5jarYRwOUe/PiQ8tMBkMw9X/2U8G1qGYQb/CiRDh1DDy/Eh/mGKj\nRDBCMDMGA1UdEQQsMCqCD3ByaXZhdGUtcHJveHktMYIXKi5wcml2YXRlLXByb3h5\nLTEubG9jYWwwCwYDVR0PBAQDAgeAMA0GCSqGSIb3DQEBCwUAA4IBAQAmUESzD1ls\nmpECtRlinhiUduif9nVddtLeW/Ui86PHkS50vjSOVHY7ZHrfWbFB4/p4bwm8Sp1/\npFHx4WyuHiow5Ah3HV9afDcgyWBd1V8ijIFOlNF27u/caVsa9gV7iDVJ+6mBXKkf\nCgNI2bA2WoOVXQMwRoow4vSYrVAdM/Eyq8PHYOHkGqdd4uASG5df4vE+gnB2z9WD\nFuxkVYkncVP5OB+N7EAkQrVjrITdiSN0yYAVWFKz1IEnPF7GRW6KsPHW9lJeePeD\n1gLNh2KF6drrXT2PIIYVB31uepSoCqFnUUDcC/PX0qHu8jilvr/pTzhFUWbuX+Ja\nfaIRxqWB0frZ\n-----END CERTIFICATE-----\n&quot;</span>
-  <span class="p">},</span>
-  <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;foo&quot;</span><span class="p">:</span> <span class="s2">&quot;bar&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;private-proxy-1&quot;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-
-<p>Bevor wir solche Daten importieren, können wir die Signatur mit dem Befehl <code>verify</code> überprüfen (Sie müssen die erwartete <code>name</code> des Unterzeichners angeben):</p>
-
-<div class="codehilite"><pre><span></span><code><span class="nb">export</span> <span class="nv">SD_SETTINGS</span><span class="o">=</span>settings/dev/roles/sd-1/sdh
-sdh verify signed.json private-proxy-1
-</code></pre></div>
-
-<p>Wenn die Signatur gültig ist, lautet der Exit-Code <code>0</code>, andernfalls <code>1</code>.</p>
+<p></p>
 
 
     </div>
@@ -402,6 +328,6 @@ sdh verify signed.json private-proxy-1
 </div>
 
   </div>
-  <script defer type="text/javascript" src="/pages_smple/doku/static/js/bulma.js"></script>
+  <script defer type="text/javascript" src="/pages_smple/static/js/bulma.js"></script>
 </body>
 </html>
