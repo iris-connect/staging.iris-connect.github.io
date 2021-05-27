@@ -8,7 +8,7 @@ pages:
     title|t: Getting Started
     navtitle|t: Getting Started
     name: 'getting-started'
-  - src|f|exists?: "../sub1/{target_language}/hello.md"
+  - src|f|exists?: "sub1/{target_language}/hello.md"
       title|t: Submodule1
       navtitle|t: Submodule1
       name: 'submodule1'
