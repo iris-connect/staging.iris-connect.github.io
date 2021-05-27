@@ -20,11 +20,8 @@ languages:
 translations:
   hp:
     site-title:
-      _t:
-        de: d7148d9fd0cd368b
-        en: d7148d9fd0cd368b
-      de: EPS-Dokumentation
-      en: EPS documentation
+      de: IRIS-Dokumentation
+      en: IRIS documentation
 #translations:
 #  $include: translations/index.yml
 context:
