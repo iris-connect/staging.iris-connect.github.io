@@ -1,12 +1,12 @@
 i18n:
   source_language:
-    config: en
-    strings: en
+    config: de
+    strings: de
 languages:
-  en:
-    prefix: "docs"
-    language_title: English
-    $include: site-en.yml
+#  en:
+#    prefix: "docs"
+#    language_title: English
+#    $include: site-en.yml
   de:
     prefix: "de/doku"
     language_title: Deutsch
