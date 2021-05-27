@@ -4,6 +4,6 @@ i18n:
     strings: de
 languages:
   de:
-    prefix: "doku"
+    prefix: ""
     language_title: Deutsch
     $include: site-de.yml
