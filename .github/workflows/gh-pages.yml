@@ -31,9 +31,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install virtualenv
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: Build
+        run: |
+          make
       - name: Deploy
-        uses: sterlingwes/gh-pages-deploy-action@v1.1
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          source-directory: build
-          build-command: make
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./build
