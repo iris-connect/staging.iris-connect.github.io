@@ -3,33 +3,33 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/proxy-service/installation</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/contact</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/service-directory/installation</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/service-directory</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/service-directory/configuration</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/getting-started</loc>
+  </url>
+  <url>
     <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/eps-service</loc>
   </url>
   <url>
     <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/proxy-service/configuration</loc>
   </url>
   <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/service-directory</loc>
-  </url>
-  <url>
     <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/proxy-service</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/contact</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/proxy-service/installation</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/getting-started</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/service-directory/installation</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/docs/service-directory/configuration</loc>
   </url>
 </urlset>
