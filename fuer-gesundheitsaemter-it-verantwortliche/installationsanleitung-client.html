@@ -7,7 +7,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content=
 "width=device-width, initial-scale=1">
-<title>EPS-Dokumentation | 404</title>
+<title>EPS-Dokumentation | Für Gesundheitsämter (IT
+Verantwortliche) - Installationsanleitung Client</title>
 <link rel="stylesheet" type="text/css" href=
 "/pages_smple/static/css/main.css">
 <script>
@@ -144,9 +145,10 @@ data-target="side-menu" data-toggle="collapse"><span>&nbsp;</span>
 </li>
 </ul>
 </li>
-<li><a class="" href="#" data-toggle="collapse" data-target=
-"page-ga-it-nav">Für Gesundheitsämter (IT Verantwortliche)</a>
-<ul class="is-hidden" id="page-ga-it-nav">
+<li><a class="is-active" href="#" data-toggle="collapse"
+data-target="page-ga-it-nav">Für Gesundheitsämter (IT
+Verantwortliche)</a>
+<ul class="" id="page-ga-it-nav">
 <li><a href=
 "/pages_smple/fuer-gesundheitsaemter-it-verantwortliche/installationsanleitung-client">
 Installationsanleitung Client</a></li>
@@ -199,7 +201,7 @@ Conduct</a></li>
 <!--        -->
 <!--            -->
 <!--            <li>-->
-<!--                <a class="is-open is-active" href="/pages_smple/404">-->
+<!--                <a class="is-open is-active" href="/pages_smple/fuer-gesundheitsaemter-it-verantwortliche/installationsanleitung-client">-->
 <!--                    Deutsch-->
 <!--                </a>-->
 <!--            </li>-->
@@ -209,13 +211,124 @@ Conduct</a></li>
 <!--    </li>--></ul>
 </aside>
 </div>
+<div class="with-comments">
+<div class="comments"></div>
 <section class="section first">
 <div class="content">
-<h1>Nicht gefunden (404)</h1>
-<p>Leider ist die angeforderte URL auf dieser Seite nicht
-vorhanden. Wir entschuldigen uns für die Unannehmlichkeiten.</p>
+<div class="content markdown">
+<h1>IRIS Client</h1>
+<p>Der IRIS Client ist der Teil vom IRIS Ecosystem, der auf einem
+Server im Gesundheitsamt (bzw. beim IT Dienstleiser) installiert
+wird und die Kernfunktionalitäten für Endbenutzer zur Verfügung
+stellt.</p>
+<h2>Architektur</h2>
+<p><a href="./Architektur.md">Hier geht es weiter</a></p>
+<h2>Systemvoraussetzungen</h2>
+<p>Für den Betrieb aller Komponenten des IRIS Clients empfehlen wir
+folgende Server Dimension:</p>
+<pre><code>VM mit 2 vCores, 16 GB Ram und 20 GB Storage
+</code></pre>
+<p>Aus technischer Perspektive können alle IRIS Komponenten auf dem
+selben Server betrieben werden.</p>
+<h2>Umgebungen</h2>
+<p>IRIS stellt zwei Umgebungen bereit. Staging zum Testen und Live
+für den Produktionsbetrieb mit echten Daten.</p>
+<h2>IRIS Client Komponenten und Abhängigkeiten</h2>
+<h3>Folgende Komponenten werden vom IRIS Team bereit gestellt.</h3>
+<p>| Komponente | Beschreibung | Technologie | Download | |
+-------------------- |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|
+-----------------------------------------------------------------------------------------------------------------
+| -| | IRIS Client Frontend | Statische Web-Anwendung (Single Page
+Application) | <a href=
+"https://www.typescriptlang.org/">Typescript</a>, <a href=
+"https://vuejs.org/">Vue.js</a>, <a href=
+"https://vuetifyjs.com/en/">Vuetify</a> | <a href=
+"https://github.com/iris-connect/iris-client/releases">Github</a> |
+| IRIS Client Backend | Backend Komponente für die Webanwendung.
+Kümmert sich um Authentifizierung und Authorisierung, stellte die
+gesicherte Verbindung zu den zentralen und de-zentralen IRIS
+Servicen bereit. | Java, <a href=
+"https://spring.io/projects/spring-boot">Spring Boot</a> | <a href=
+"https://github.com/iris-connect/iris-client/releases">Github</a> |
+| | EPS | Endpunktserver für den Punkt-zu-Punkt Datenübertragung
+der Gästelisten und Kontakttagebüchern | <a href=
+"https://golang.org/">Go</a> | <a href=
+"https://github.com/iris-connect/eps/releases">Github</a> | | Proxy
+| Managed eingehende Verbindungen über Public Proxy. | <a href=
+"https://golang.org/">Go</a> | <a href=
+"https://github.com/iris-connect/eps/releases">Github</a> | | EPS
+(Proxy) | Endpunktserver für Proxy. | <a href=
+"https://golang.org/">Go</a> | <a href=
+"https://github.com/iris-connect/eps/releases">Github</a> |</p>
+<h3>Folgende Laufzeit-Abhängigkeiten werden vom IRIS Client
+vorausgesetzt.</h3>
+<p>| Laufzeit-Abhängigkeit | Beschreibung | | ---------------------
+|
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| | Postgres DB | Das IRIS Client Backend benutzt eine Postgres
+Datenbank für die a) Verwaltung der Benutzer und b) für die
+Speicherung der offenen Index Fall Anfragen und Ereignis Anfragen |
+| Webserver | Für die Bereistellung vom IRIS Client Frontend über
+eine sichere HTTPS Verbindung wird ein Webserver benötigt. Dieser
+muss in der Lage sein a) Die statische Webanwendung auszuliefern
+und b) API Anfragen an das IRIS Client Backend weiterzuleiten |</p>
+<blockquote>
+<p>Die Standard-Installationsvariante mit Docker Compose bringt
+bereits ein vorkonfiguriertes Setup inklusive der Postgres DB, dem
+Webserver (nginx) und EPS mit.</p>
+</blockquote>
+<h3>Des Weiteren werden folgende Konfigurations-Abhängigkeiten
+benötigt.</h3>
+<p>| Konfigurations-Abhängigkeit | Beschreibung | |
+------------------------------- |
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| | Domain | Die vom GA bestimmte Domain unter der der IRIS Client
+für die Benutzer erreichbar ist (z.B. iris.bonn.local) | | Domain
+Zertifikat und Schlüssel | Für die o.g. Domain muss ein valides
+Zertifikat inklusive privatem Schlüssel bereitgestellt werden. | |
+GA Client Zertifikat | Der IRIS Client benutzt ein für das GA
+ausgestelltes Client Zertifikat um mit den zentralen IRIS Servicen
+zu kommunizieren. Darüber hinaus werden alle Anfragen die vom IRIS
+Client ausgehen mit dem Zertifikat signiert. Für die Staging
+Umgebung ist der Prozess <a href=
+"Certificate-Process-Staging.md">hier</a> dokumentiert. | | Proxy
+Client Zertifikat | Der proxy benutzt ein für das GA ausgestelltes
+Client Zertifikat um mit den public proxy zu kommunizieren. Das
+Proxy Client Zertifikat ist nicht das selbe wie das GA Client
+Zertifikat. Für die Staging Umgebung ist der Prozess <a href=
+"Certificate-Process-Staging.md">hier</a> dokumentiert. |</p>
+<h3>Des Weiteren gibt es folgende infrastrukturelle
+Anhängigkeiten</h3>
+<p>| Infrastruktur-Abhängigkeit | Beschreibung | |
+----------------------------------------------------- |
+------------------------------------------------------------------------------------------------------------------------------------
+| | HTTPS Proxy | Proxy server für EPS. Unterstützung für <a href=
+"https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/CONNECT">
+HTTP_CONNECT</a> notwendig. | | Proxy Freischaltung - IRIS Central
+Services - Staging | Zugriff auf iris.staging.iris-gateway.de
+(ConnectPorts: 3322, 4445, 5559, 9999) | | Proxy Freischaltung -
+IRIS App Provider - Staging | Zugriff auf
+*.apps.staging.iris-gateway.de (ConnectPorts: 4444) | | Proxy
+Freischaltung - IRIS Central Services - Live | - (TBD) | | Proxy
+Freischaltung - IRIS App Provider - Live | - (TBD) |</p>
+<h2>Authentifizierung und Authorisierung</h2>
+<p>Aktuell bietet der IRIS client eine eigene Benutzerverwaltung
+an, die von einem IT Administrator betreut werden muss. Das
+Startpasswort für den Admin Account kann beim erstmaligen Starten
+gesetzt werden (siehe <a href=
+"../.env.sample">.env.sample</a>).</p>
+<h2>IRIS Client - Installation Stand-Alone</h2>
+<p><a href="./Installation-Standalone.md">Hier geht es
+weiter.</a></p>
+<h2>IRIS Client - Installation mit Docker Compose</h2>
+<p><a href="./Installation-Docker-Compose.md">Hier geht es
+weiter.</a></p>
+</div>
 </div>
 </section>
+</div>
 </div>
 <script defer type="text/javascript" src=
 "/pages_smple/static/js/bulma.js"></script>
