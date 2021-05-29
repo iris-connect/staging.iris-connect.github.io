@@ -5,18 +5,18 @@ pages:
     navtitle|t: Start
     name: ''
   - src|f|exists?: "{target_language}/getting-started.md"
-    title|t: Getting Started
-    navtitle|t: Getting Started
+    title|t: Erste Schritte
+    navtitle|t: Erste Schritte
     name: 'getting-started'
-  - src|f|exists?: "sub1/{target_language}/hello.md"
-      title|t: Submodule1
-      navtitle|t: Submodule1
-      name: 'submodule1'
+  - src|f|exists?: "sub1/docs/{target_language}/hello.md"
+    title|t: Submodule1
+    navtitle|t: Submodule1
+    name: 'submodule1'
   - title|t: System
     name: system
     slug||slugify: system
     children:
-    - title|t: Overview
+    - title|t: Übersicht
       src|f|exists?: "{target_language}/system/index.md" 
       name: ''
       slug||slugify: overview
@@ -26,7 +26,7 @@ pages:
     slug||slugify: eps
     children:
       - src|f|exists?: "{target_language}/eps/index.md"
-        title|t: Overview
+        title|t: Übersicht
         name: index
   - name: proxy
     title: Proxy Service
@@ -34,13 +34,13 @@ pages:
     slug||slugify: proxy
     children:
       - src|f|exists?: "{target_language}/proxy/index.md"
-        title|t: Overview
+        title|t: Übersicht
         name: index
       - src|f|exists?: "{target_language}/proxy/installation.md"
         title|t: Installation
         name: installation
       - src|f|exists?: "{target_language}/proxy/configuration.md"
-        title|t: Configuration
+        title|t: Konfiguration
         name: configuration
   - name: sd
     title: Service Directory
@@ -48,17 +48,17 @@ pages:
     slug||slugify: service-directory
     children:
       - src|f|exists?: "{target_language}/sd/index.md"
-        title|t: Overview
+        title|t: Übersicht
         name: index
       - src|f|exists?: "{target_language}/sd/installation.md"
         title|t: Installation
         name: installation
       - src|f|exists?: "{target_language}/sd/configuration.md"
-        title|t: Configuration
+        title|t: Konfiguration
         name: configuration
-  - title|t: Contact
+  - title|t: Kontakt
     name: imprint
-    slug||slugify: Contact
+    slug||slugify: Kontakt
     src|f|exists?: "{target_language}/imprint.md"
 #  - title|t: Installation
 #    navtitle|t: Installation

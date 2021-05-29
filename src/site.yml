@@ -18,11 +18,6 @@ languages:
         slug: '404'
         name: '404'
 translations:
-  hp:
-    site-title:
-      de: IRIS-Dokumentation
-      en: IRIS documentation
-#translations:
-#  $include: translations/index.yml
+  $include: translations/index.yml
 context:
   env: development

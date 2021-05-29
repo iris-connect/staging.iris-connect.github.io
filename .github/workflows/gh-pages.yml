@@ -34,7 +34,7 @@ jobs:
           make setup
       - name: Build
         run: |
-          make SITE=src/site-prod.yml
+          make translate-config site SITE=src/site-prod.yml
           make optimize-html
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
