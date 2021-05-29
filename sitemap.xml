@@ -3,36 +3,9 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/communityopen-development/contributor-license-agreement</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/README/technische-beschreibung/architektur</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/fuer-kontakterfassungs-apps/faq-apps</loc>
-  </url>
-  <url>
     <loc>https://arrol.github.io/pages_smple/docs/pages_smple/kontakt</loc>
   </url>
   <url>
     <loc>https://arrol.github.io/pages_smple/docs/pages_smple</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/fuer-gesundheitsaemter-it-verantwortliche/installationsanleitung-client</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/fuer-kontakterfassungs-apps/code-of-conduct</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/communityopen-development/code-of-conduct</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/fuer-gesundheitsaemter-it-verantwortliche/faq-gesundheitsaemter</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/README</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/fuer-kontakterfassungs-apps/prozessbeschreibung-anbindung</loc>
   </url>
 </urlset>
