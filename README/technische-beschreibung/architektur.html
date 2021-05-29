@@ -7,7 +7,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content=
 "width=device-width, initial-scale=1">
-<title>EPS-Dokumentation | 404</title>
+<title>EPS-Dokumentation | Willkommen - Technische Beschreibung -
+Architektur</title>
 <link rel="stylesheet" type="text/css" href=
 "/pages_smple/static/css/main.css">
 <script>
@@ -127,17 +128,17 @@ data-target="side-menu" data-toggle="collapse"><span>&nbsp;</span>
 "/pages_smple">EPS-Dokumentation</a></p>
 <ul class="menu-list">
 <li><a href="/pages_smple">Start - Temp</a></li>
-<li><a class="" href="#" data-toggle="collapse" data-target=
-"page-welcome-nav">Start</a>
-<ul class="is-hidden" id="page-welcome-nav">
+<li><a class="is-active" href="#" data-toggle="collapse"
+data-target="page-welcome-nav">Start</a>
+<ul class="" id="page-welcome-nav">
 <li><a href="/pages_smple/README">Start</a></li>
 <li><a class="" href="#" data-toggle="collapse" data-target=
 "page-welcome.funktionsweise-nav">Funktionsweisen</a>
 <ul class="is-hidden" id="page-welcome.funktionsweise-nav"></ul>
 </li>
-<li><a class="" href="#" data-toggle="collapse" data-target=
-"page-welcome.tech-nav">Technische Beschreibung</a>
-<ul class="is-hidden" id="page-welcome.tech-nav">
+<li><a class="is-active" href="#" data-toggle="collapse"
+data-target="page-welcome.tech-nav">Technische Beschreibung</a>
+<ul class="" id="page-welcome.tech-nav">
 <li><a href=
 "/pages_smple/README/technische-beschreibung/architektur">Architektur</a></li>
 </ul>
@@ -199,7 +200,7 @@ Conduct</a></li>
 <!--        -->
 <!--            -->
 <!--            <li>-->
-<!--                <a class="is-open is-active" href="/pages_smple/404">-->
+<!--                <a class="is-open is-active" href="/pages_smple/README/technische-beschreibung/architektur">-->
 <!--                    Deutsch-->
 <!--                </a>-->
 <!--            </li>-->
@@ -209,13 +210,50 @@ Conduct</a></li>
 <!--    </li>--></ul>
 </aside>
 </div>
+<div class="with-comments">
+<div class="comments"></div>
 <section class="section first">
 <div class="content">
-<h1>Nicht gefunden (404)</h1>
-<p>Leider ist die angeforderte URL auf dieser Seite nicht
-vorhanden. Wir entschuldigen uns für die Unannehmlichkeiten.</p>
+<div class="content markdown">
+<h1>IRIS Architektur</h1>
+<p>Das IRIS System baut auf einer dezentralen Architektur auf.
+Dabei findet der Austausch von persönlichen Daten (wie z.B.
+Gästelisten oder Kontakttagebüchern) direkt zwischen den App
+Anbietern und dem zuständigen Gesundheits am statt.</p>
+<p>Das folgende Schaubild visualisiert die Architektur und erklärt
+die zentralen Bestandteile.</p>
+<p><img src="IRIS-C2-with-EPS.jpg" alt="IRIS C2 Architektur"></p>
+<p>| Nummer | Erklärung | |-|-| |1| IRIS unterteilt sich in
+<em>IRIS Central Services</em> und den <em>IRIS Client</em>.
+Erstere werden zentral im Rechenzentrum der <a href=
+"https://www.akdb.de/">AKDB</a> gehostet und vom <a href=
+"https://github.com/iris-connect">IRIS Team</a> verwaltet. Der IRIS
+Client wird mitsamt einer Dokumentation zum Download für die
+IT-Teams der Gesundheitsämter bereitgestellt. | |2| Ein weiterer
+wichtiger Teilnemer im IRIS System sind die Kontaktdaten Erfassungs
+Apps. Diese stammen zum größten Teil aus der Initiative <a href=
+"https://www.wirfuerdigitalisierung.de/">Wir für
+Digitaliserung</a>. | |3| Damit Einrichtungen dei dehnen eine
+digitale Kontaktdaten Erfassung im Einsatz ist vom Gesundheitsamt
+gefunden werden können, stellt IRIS ein zentrales Suchregister zur
+Verfügung. Die Daten im Suchregister werden von den Kontaktdaten
+Erfassungs Apps bereitgestellt. | |4| Das vom IRIS Team verwaltete
+Service Directory enthält Einträge für alle teilnehmenden Akteure
+um IRIS System. Zudem werden die Berechtigungen der
+Kommunikationsbeziehungen hier hinterlegt. | |5| Der IRIS Proxy
+Service ermöglicht es, Daten aktiv in ein Gesundheitsamt zu
+schicken. Dafür stellt der Proxy eine autorisierte Verbindung
+zwischen einer App und einer Proxy Komponente im GA her. Der IRIS
+Client im GA muss dafür keine eingehenden Verbindungen zulassen. |
+|6| Herzstück der Punkt-zu-Punkt Kommunikation ist der IRIS
+Endpunktserver. Dabei handelt es sich um eine Komponente die
+dezentral bei allen Akteure des IRIS Systems installiert wird. Die
+Kommunikation erfolgt über gRPC mittels MTLS. Die dafür notwendigen
+Zertifikate werden vom IRIS Team ausgestellt. |</p>
+</div>
 </div>
 </section>
+</div>
 </div>
 <script defer type="text/javascript" src=
 "/pages_smple/static/js/bulma.js"></script>
