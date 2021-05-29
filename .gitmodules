@@ -1,6 +1,12 @@
-[submodule "sub1"]
-	path = sub1
+[submodule "src/ext/sub1"]
+	path = src/ext/sub1
 	url = https://github.com/arrol/pages_smple_sub1.git
-[submodule "src/sub1"]
-	path = src/sub1
-	url = https://github.com/arrol/pages_smple_sub1.git
+[submodule "src/ext/iris-dokumentation"]
+	path = src/ext/iris-dokumentation
+	url = https://github.com/iris-connect/iris-documentation.git
+[submodule "src/ext/iris-client"]
+	path = src/ext/iris-client
+	url = https://github.com/iris-connect/iris-client.git
+[submodule "src/ext/eps"]
+	path = src/ext/eps
+	url = https://github.com/iris-connect/eps.git
