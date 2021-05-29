@@ -11,7 +11,7 @@ pages:
   title: Erste Schritte
 - name: submodule1
   navtitle: Submodule1
-  src: sub1/de/hello.md
+  src: sub1/docs/de/hello.md
   title: Submodule1
 - children: []
   name: system
