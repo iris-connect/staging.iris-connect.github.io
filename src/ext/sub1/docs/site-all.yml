@@ -1,0 +1,8 @@
+title|t: Submodule1
+slug||slugify: Submodule1
+navtitle|t: Submodule1
+name: 'submodule1'
+children:
+  - src|f|exists?: "ext/sub1/docs/{target_language}/hello2.md"
+    title|t: sub1 subpage
+    name: sub1 subpage
