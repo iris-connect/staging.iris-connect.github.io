@@ -1,0 +1,27 @@
+title|t: Für Gesundheitsämter (IT Verantwortliche)
+navtitle|t: Für Gesundheitsämter (IT Verantwortliche)
+name: 'ga-it'
+slug||slugify: 'ga-it'
+children:
+  - title|t: Installationsanleitung Client
+    navtitle|t: Installationsanleitung Client
+    slug||slugify: 'installation-client'
+    name: 'installation-client'
+    src|f|exists?: "ext/iris-client/infrastructure/deployment/docs/Installation.md"
+  - title|t: Prozessbeschreibung Anbindung
+    navtitle|t: Prozessbeschreibung Anbindung
+    slug||slugify: 'prozess-anbindung'
+    name: 'prozess-anbindung'
+  - title|t: Buchbare Services
+    navtitle|t: Buchbare Services
+    slug||slugify: 'buchbare-services'
+    name: 'buchbare-services'
+  - title|t: Verfahrensbetrieb
+    navtitle|t: Verfahrensbetrieb
+    slug||slugify: 'verfahrensbetrieb'
+    name: 'verfahrensbetrieb'
+  - title|t: FAQ Gesundheitsämter
+    navtitle|t: FAQ Gesundheitsämter
+    slug||slugify: 'faq-gesundheitsaemter'
+    name: 'faq-gesundheitsaemter'
+    src|f|exists?: "ext/iris-dokumentation/use_iris_as_Gesundheitsamt/FAQ_GA_IT-Verantwortliche.md"

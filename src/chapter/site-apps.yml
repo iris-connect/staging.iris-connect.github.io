@@ -1,0 +1,25 @@
+title|t: Für Kontakterfassungs-Apps
+navtitle|t: Für Kontakterfassungs-Apps
+name: 'tracing-apps'
+slug||slugify: 'tracing-apps'
+children:
+  - title|t: Prozessbeschreibung Anbindung
+    navtitle|t: Prozessbeschreibung Anbindung
+    slug||slugify: 'prozessbeschreibung-anbindung'
+    name: 'prozessbeschreibung-anbindung'
+    src|f|exists?: "ext/iris-dokumentation/connect_your_app_to_IRIS/technical_details/app_onboarding.md"
+  - title|t: Schnittstellenbeschreibung
+    navtitle|t: Schnittstellenbeschreibung
+    slug||slugify: 'schnittstellenbeschreibung'
+    name: 'schnittstellenbeschreibung'
+#    src|f|exists?: "ext/iris-dokumentation/connect_your_app_to_IRIS/technical_details/app_onboarding.md"
+  - title|t: Code of Conduct
+    navtitle|t: Code of Conduct
+    slug||slugify: 'code-of-conduct'
+    name: 'code-of-conduct'
+    src|f|exists?: "ext/iris-dokumentation/connect_your_app_to_IRIS/Code_of_Conduct_Apps_for_IRIS_draft.md"
+  - title|t: FAQ Apps
+    navtitle|t: FAQ Apps
+    slug||slugify: 'faq-apps'
+    name: 'faq-apps'
+    src|f|exists?: "ext/iris-dokumentation/connect_your_app_to_IRIS/apps_FAQ.md"

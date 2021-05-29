@@ -1,0 +1,47 @@
+title|t: Willkommen
+navtitle|t: Start
+src|f|exists?: "ext/iris-dokumentation/README.md"
+name: 'welcome'
+children:
+  - title|t: Zweck
+    navtitle|t: Zweck
+    slug||slugify: 'zweck'
+    name: 'zweck'
+#    src|f|exists?: "ext/iris-dokumentation/handbook-chapters/use_iris_as_Gesundheitsamt/handbuch/IRIS_general.md"
+  - title|t: Funktionsweisen
+    navtitle|t: Funktionsweisen
+    slug||slugify: 'funktionsweise'
+    name: 'funktionsweise'
+#    src|f|exists?: "ext/iris-dokumentation/handbook-chapters/use_iris_as_Gesundheitsamt/handbuch/03_IRIS_Funktionsweise.md"
+    children:
+      - title|t: Kontakttagebücher (Indexfall-Nachverfolgung)
+        navtitle|t: Kontakttagebücher (Indexfall-Nachverfolgung)
+        slug||slugify: 'indexfall'
+        name: 'indexfall'
+#        src|f|exists?: "ext/iris-dokumentation/handbook-chapters/use_iris_as_Gesundheitsamt/handbuch/03a_IRIS_Indexfall.md"
+      - title|t: Gästelisten (Ereignisfall-Nachverfolgung)
+        navtitle|t: Gästelisten (Ereignisfall-Nachverfolgung)
+        slug||slugify: 'ereignissfall'
+        name: 'ereignissfall'
+#        src|f|exists?: "ext/iris-dokumentation/handbook-chapters/use_iris_as_Gesundheitsamt/handbuch/03b_IRIS_Ereignisverfolgung.md"
+  - title|t: Technische Beschreibung
+    navtitle|t: Technische Beschreibung
+    slug||slugify: 'tech'
+    name: 'tech'
+#    src|f|exists?: "ext/iris-dokumentation/handbook-chapters/use_iris_as_Gesundheitsamt/handbuch/05_IRIS_Technischer_Betrieb.md"
+    children:
+      - title|t: Architektur
+        navtitle|t: Architektur
+        slug||slugify: 'architektur'
+        name: 'architektur'
+        src|f|exists?: "ext/iris-client/infrastructure/deployment/docs/Architektur.md"
+      - title|t: Datenfluss (Sequenzdiagramme)
+        navtitle|t: Datenfluss (Sequenzdiagramme)
+        slug||slugify: 'datenfluss'
+        name: 'datenfluss'
+        src|f|exists?: "ext/iris-security/Doc%20Sicherheitskonzept/Resources/technical_documentation/sequence_connection_establishment_hd.svg"
+  - title|t: Historie
+    navtitle|t: Historie
+    slug||slugify: 'historie'
+    name: 'historie'
+#    src|f|exists?: "ext/iris-dokumentation/handbook-chapters/use_iris_as_Gesundheitsamt/handbuch/IRIS_general.md"

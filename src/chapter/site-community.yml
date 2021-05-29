@@ -1,0 +1,20 @@
+title|t: Community/Open Development
+navtitle|t: Community/Open Development
+name: 'community'
+slug||slugify: 'community'
+children:
+  - title|t: Contributor License Agreement
+    navtitle|t: Contributor License Agreement
+    slug||slugify: 'contributor-license-agreement'
+    name: 'contributor-license-agreement'
+    src|f|exists?: "ext/iris-dokumentation/LICENSE.md"
+  - title|t: Code of Conduct
+    navtitle|t: Code of Conduct
+    slug||slugify: 'code-of-conduct'
+    name: 'code-of-conduct'
+    src|f|exists?: "ext/iris-dokumentation/CODE_OF_CONDUCT_community.md"
+  - title|t: Helpful links and resources
+    navtitle|t: Helpful links and resources
+    slug||slugify: 'links-and-resources'
+    name: 'links-and-resources'
+#    src|f|exists?: "ext/iris-dokumentation/connect_your_app_to_IRIS/Code_of_Conduct_Apps_for_IRIS_draft.md"

@@ -1,0 +1,10 @@
+title|t: Für Gesundheitsämter (Nutzer)
+navtitle|t: Für Gesundheitsämter (Nutzer)
+name: 'ga-user'
+slug||slugify: 'ga-user'
+children:
+  - title|t: Bedienungsanleitung
+    navtitle|t: Bedienungsanleitung
+    slug||slugify: 'bedienungsanleitung'
+    name: 'bedienungsanleitung'
+#    src|f|exists?: "ext/iris-client/infrastructure/deployment/docs/Installation.md"

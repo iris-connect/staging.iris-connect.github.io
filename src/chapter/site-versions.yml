@@ -1,0 +1,20 @@
+title|t: Versionen
+navtitle|t: Versionen
+name: 'versions'
+slug||slugify: 'versions'
+children:
+  - title|t: EPS
+    navtitle|t: EPS
+    slug||slugify: 'eps-changelog'
+    name: 'eps-changelog'
+#    src|f|exists?: "ext/iris-dokumentation/LICENSE.md"
+  - title|t: Client
+    navtitle|t: Client
+    slug||slugify: 'client-changelog'
+    name: 'client-changelog'
+#    src|f|exists?: "ext/iris-dokumentation/CODE_OF_CONDUCT_community.md"
+  - title|t: Gateway
+    navtitle|t: Gateway
+    slug||slugify: 'gateway-changelog'
+    name: 'gateway-changelog'
+#    src|f|exists?: "ext/iris-dokumentation/connect_your_app_to_IRIS/Code_of_Conduct_Apps_for_IRIS_draft.md"
