@@ -3,13 +3,19 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/kontakt</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/submodule/hello2</loc>
-  </url>
-  <url>
     <loc>https://arrol.github.io/pages_smple/docs/pages_smple</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/eps-service</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/service-directory/configuration</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/service-directory</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/kontakt</loc>
   </url>
   <url>
     <loc>https://arrol.github.io/pages_smple/docs/pages_smple/getting-started</loc>
@@ -18,16 +24,10 @@
     <loc>https://arrol.github.io/pages_smple/docs/pages_smple/proxy-service/installation</loc>
   </url>
   <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/eps-service</loc>
+    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/submodule/hello2</loc>
   </url>
   <url>
     <loc>https://arrol.github.io/pages_smple/docs/pages_smple/service-directory/installation</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/service-directory/configuration</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/pages_smple/service-directory</loc>
   </url>
   <url>
     <loc>https://arrol.github.io/pages_smple/docs/pages_smple/proxy-service/configuration</loc>
