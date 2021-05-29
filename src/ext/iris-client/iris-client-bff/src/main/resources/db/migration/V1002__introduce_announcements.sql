@@ -1,1 +1,0 @@
-ALTER TABLE event_data_request ADD announcement_token varchar(256) NULL;
