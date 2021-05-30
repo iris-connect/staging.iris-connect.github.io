@@ -3,7 +3,7 @@ $include:
   - site-i18n.yml
 path: /staging.iris.github.io/
 static-path: static
-url: https://arrol.github.io/pages_smple/docs
+url: https://iris-connect.github.io/staging.iris.github.io/
 # we generate links without extensions as nginx rewrites those URLs automatically
 hide-href-extensions: ['/index.html', 'index.html', '.html']
 context:

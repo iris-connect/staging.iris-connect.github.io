@@ -1,4 +1,4 @@
-title: IRIS EPS (Endpoint System)
+title: IRIS-Dokumentation
 pages:
   - src|f|exists?: "{target_language}/index.md"
     title|t: Willkommen
