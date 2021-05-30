@@ -1,7 +1,7 @@
 $include:
   - site.yml
   - site-i18n.yml
-path: /pages_smple/
+path: /staging.iris.github.io/
 static-path: static
 url: https://arrol.github.io/pages_smple/docs
 # we generate links without extensions as nginx rewrites those URLs automatically
