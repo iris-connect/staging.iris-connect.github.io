@@ -3,25 +3,10 @@
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
   xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/fuer-kontakterfassungs-apps/code-of-conduct</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/communityopen-development/contributor-license-agreement</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/README</loc>
-  </url>
-  <url>
     <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/README/technische-beschreibung/architektur</loc>
   </url>
   <url>
-    <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/communityopen-development/code-of-conduct</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/fuer-gesundheitsaemter-it-verantwortliche/installationsanleitung-client</loc>
-  </url>
-  <url>
-    <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/fuer-kontakterfassungs-apps/prozessbeschreibung-anbindung</loc>
+    <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/kontakt</loc>
   </url>
   <url>
     <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io</loc>
@@ -30,9 +15,24 @@
     <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/fuer-gesundheitsaemter-it-verantwortliche/faq-gesundheitsaemter</loc>
   </url>
   <url>
-    <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/kontakt</loc>
+    <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/communityopen-development/code-of-conduct</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/fuer-kontakterfassungs-apps/code-of-conduct</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/README</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/fuer-kontakterfassungs-apps/prozessbeschreibung-anbindung</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/communityopen-development/contributor-license-agreement</loc>
   </url>
   <url>
     <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/fuer-kontakterfassungs-apps/faq-apps</loc>
+  </url>
+  <url>
+    <loc>https://arrol.github.io/pages_smple/docs/staging.iris.github.io/fuer-gesundheitsaemter-it-verantwortliche/installationsanleitung-client</loc>
   </url>
 </urlset>
