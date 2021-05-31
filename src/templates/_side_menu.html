@@ -18,27 +18,4 @@
             </li>
         {% endif %}
     {% endfor %}
-<!--    <li>-->
-<!--        <a href="#" data-toggle="collapse" data-target="menu-language-dropdown">-->
-<!--            {{'languages'|translate}}-->
-<!--        </a>-->
-<!--        <ul id="menu-language-dropdown" class="is-hidden">-->
-<!--        {% if page is defined %}-->
-<!--          {% set link=page.name %}-->
-<!--        {% elif name is defined %}-->
-<!--          {% set link=name %}-->
-<!--        {% else %}-->
-<!--          {% set link='' %}-->
-<!--        {% endif %}-->
-<!--        {% for language, language_config in site.config.languages.items() %}-->
-<!--            {% if link|href(language=language) != None %}-->
-<!--            <li>-->
-<!--                <a class="{% if lang == language %}is-open is-active{%endif%}" href="{{link|href(language=language)}}">-->
-<!--                    {{language_config.language_title}}-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            {% endif %}-->
-<!--        {% endfor %}-->
-<!--        </ul>      -->
-<!--    </li>-->
 </ul>
