@@ -127,20 +127,19 @@ data-target="side-menu" data-toggle="collapse"><span>&nbsp;</span>
 <p class="menu-label" style="text-align:center"><a href=
 "/staging.iris.github.io">IRIS-Dokumentation</a></p>
 <ul class="menu-list">
-<li><a href="/staging.iris.github.io">Start - Temp</a></li>
+<li><a class="is-active" href="#" data-toggle="collapse"
+data-target="page-index-nav">Start</a>
+<ul class="" id="page-index-nav">
+<li><a href="/staging.iris.github.io">Start</a></li>
 <li><a class="" href="#" data-toggle="collapse" data-target=
-"page-welcome-nav">Start</a>
-<ul class="is-hidden" id="page-welcome-nav">
-<li><a href="/staging.iris.github.io/README">Start</a></li>
-<li><a class="" href="#" data-toggle="collapse" data-target=
-"page-welcome.funktionsweise-nav">Funktionsweisen</a>
-<ul class="is-hidden" id="page-welcome.funktionsweise-nav"></ul>
+"page-index.funktionsweise-nav">Funktionsweisen</a>
+<ul class="is-hidden" id="page-index.funktionsweise-nav"></ul>
 </li>
 <li><a class="" href="#" data-toggle="collapse" data-target=
-"page-welcome.tech-nav">Technische Beschreibung</a>
-<ul class="is-hidden" id="page-welcome.tech-nav">
+"page-index.tech-nav">Technische Beschreibung</a>
+<ul class="is-hidden" id="page-index.tech-nav">
 <li><a href=
-"/staging.iris.github.io/README/technische-beschreibung/architektur">
+"/staging.iris.github.io/index/technische-beschreibung/architektur">
 Architektur</a></li>
 </ul>
 </li>
@@ -199,19 +198,103 @@ Code of Conduct</a></li>
 <section class="section first">
 <div class="content">
 <div class="content markdown">
-<h1>Willkommen!</h1>
-<p>Staging Umgebung der IRIS-Dokumentation.</p>
-<h2>Erste Schritte</h2>
-<p>Für die ersten Schritte lesen Sie bitte die Anleitung " <a href=
-"None">Erste Schritte"</a>. Danach können Sie sich die <a href=
-"None">detaillierte EPS-Dokumentation</a> ansehen. Wenn Sie den
-Proxy oder das Dienstverzeichnis ausführen möchten, können Sie sich
-die jeweilige <a href="None">Proxy-Dokumentation</a> sowie die
-<a href="None">Dienstverzeichnis-Dokumentation</a> ansehen.</p>
-<p>Wenn Sie auf ein Problem stoßen, <a href=
-"https://github.com/arrol/pages_smple">öffnen Sie</a> bitte
-<a href="https://github.com/arrol/pages_smple">ein Issue auf
-Github</a>, wo unsere Community Ihnen helfen kann.</p>
+<h2>About this Project</h2>
+<p>This project aims to enable public health offices to request and
+receive data for contact tracing, provived by individuals who might
+be diagnosed with a communicable disease or provided by localities,
+an infected person has visited.</p>
+<p>During the COVID-19 pandemic several applications have been
+developed that help organising this data for individuals or
+localities. What has been missing is a standardized way for public
+health officials to access this data, across the many different
+solutions in place optimized for their individual use case, for the
+specific hygiene concept.</p>
+<p>It is made with a lot of enthusiasm and dedicated to the general
+public, as we hope it will allow for more social interaction, and
+in case it is used, to speed up and facilitate processes for
+contact tracing.</p>
+<p>Everything presented here is part of a living open development
+process. We are agile and very open for reported issues.
+Contributors are always welcome!</p>
+<h2>Who We Are</h2>
+<p>IRIS is an initiative of the <a href=
+"https://inoeg.de">Innovationsverbund Öffentliche Gesundheit</a>
+(Innovation Association Public Health), a network of people who
+proactively work on interoperability within the public health
+service. The current focus is Germany but of course we are open for
+international collaboration.</p>
+<p>Many individuals with many different backgrounds are
+contributing (IT, public health, communications, design, legal). A
+lot of work is done on a volunteer or pro bono basis, but of course
+a project of this magnitude cannot be developed and maintained only
+on free time alone.</p>
+<p>The project is funded mainly by the <a href=
+"https://steiger-stiftung.de">Björn Steiger Foundation</a> (Thank
+You!) who also is responsible for the procedural operation.</p>
+<h2>Credits</h2>
+<p>Many people and organisations have been and are contributing to
+this project. Many people from IT departments and public health
+offices give their skills and knowledge. Also many other skills are
+required: design, communications, legal issues, data privacy to
+only name a few.</p>
+<h2>Code of Conduct</h2>
+<p>Our <a href="./CODE_OF_CONDUCT_community.md">Code of Conduct</a>
+defines standards for how to engage within our community.</p>
+<h2>Working Language</h2>
+<p>Falls Sie Dinge auf Deutsch beitragen möchten, können Sie das
+gerne machen. Eventuell werden Dinge dann auch von anderen Menschen
+entsprechend übersetzt.</p>
+<p>Our working language is english. Since the product has been
+initially developed with the German public health service as first
+adopter, some documents are also in German. We are working on
+providing a more internationally suited version as well.</p>
+<h2>Our Documentation</h2>
+<p>This repository contains the developer documentation and related
+content. The user documentation is currently produced and will be
+published soon.</p>
+<h3>Project Scope</h3>
+<p>Target is to provide a software that enables public health
+services to request and access the data they need at the time of
+need. Of course within the valid legal frameworks.</p>
+<h3>Technical Documentation</h3>
+<p>The technical documentation is split in * <a href=
+"https://github.com/iris-connect/iris-client/blob/develop/infrastructure/deployment/Installation.md">
+setup/installation of the client for public health offices</a> *
+<a href="/connect_your_app_to_IRIS">connecting an application for
+contact data collection to IRIS</a> * IT-Security documentation (to
+be published soon)</p>
+<h2>Repositories</h2>
+<table>
+<thead>
+<tr>
+<th>Repository</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/iris-connect/eps">eps</a></td>
+<td>The endpoint sever modules</td>
+</tr>
+<tr>
+<td><a href=
+"https://github.com/iris-connect/iris-client">iris-client</a></td>
+<td>The client for public health agencies</td>
+</tr>
+<tr>
+<td><a href=
+"https://github.com/iris-connect/iris-documentation">iris-documentation</a></td>
+<td>The place to collect documentation. Some documents are also
+inside the respective repositories.</td>
+</tr>
+</tbody>
+</table>
+<h2>Licensing</h2>
+<p>The code is released under AGPL 3.0, the documentation under CC
+BY-SA 4.0</p>
+<h2>How to Contribute</h2>
+<p>For now, please refer to
+https://github.com/iris-connect/iris-client/blob/develop/README.adoc</p>
 </div>
 </div>
 </section>
