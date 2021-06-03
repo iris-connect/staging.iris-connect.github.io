@@ -8,7 +8,7 @@ main.css
 *~
 output/*
 bower_components
-build*
+build/*
 **/settings/common.py
 *.orig
 *#

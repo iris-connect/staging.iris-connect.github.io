@@ -1,4 +1,9 @@
 title: IRIS-Dokumentation
+resources:
+  - '*.jpg'
+  - '*.png'
+  - '*.svg'
+resourcerelation: '.'
 pages:
   - src|f|exists?: "{target_language}/index.md"
     title|t: Willkommen
