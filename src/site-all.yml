@@ -5,10 +5,6 @@ resources:
   - '*.svg'
 resourcerelation: '.'
 pages:
-  - src|f|exists?: "{target_language}/index.md"
-    title|t: Willkommen
-    navtitle|t: Start - Temp
-    name: ''
   - $include: chapter/site-welcome.yml
   - $include: chapter/site-ga-it.yml
   - $include: chapter/site-ga-user.yml

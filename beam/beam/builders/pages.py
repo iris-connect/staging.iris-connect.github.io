@@ -83,16 +83,12 @@ class PagesBuilder(BaseBuilder):
     def copy_resources(self, page):
         files_grabbed = []
         folder = Path(os.path.join(Path(self.parse_src_path(page['src'])).parent, self.resourcerelation))
-        logger.info("Searching images in")
-        logger.info(folder)
         for files in self.resourcefilters:
             files_grabbed.extend(folder.glob(files))
         dest = Path(os.path.join(Path(self.site.get_build_path(page['dst'])).parent), self.resourcerelation)
         if files_grabbed and not os.path.exists(dest):
             os.mkdir(dest)
         for file in files_grabbed:
-            logger.info("copy file to")
-            logger.info(dest)
             shutil.copy(file, dest)
 
     def parse_src_path(self, src):

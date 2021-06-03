@@ -1,7 +1,9 @@
 title|t: Willkommen
 navtitle|t: Start
 src|f|exists?: "ext/iris-dokumentation/README.md"
-name: 'welcome'
+slug: 'index'
+name: 'index'
+index: true
 children:
   - title|t: Zweck
     navtitle|t: Zweck
