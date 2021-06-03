@@ -220,45 +220,86 @@ selben Server betrieben werden.</p>
 für den Produktionsbetrieb mit echten Daten.</p>
 <h2>IRIS Client Komponenten und Abhängigkeiten</h2>
 <h3>Folgende Komponenten werden vom IRIS Team bereit gestellt.</h3>
-<p>| Komponente | Beschreibung | Technologie | Download | |
--------------------- |
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-|
------------------------------------------------------------------------------------------------------------------
-| -| | IRIS Client Frontend | Statische Web-Anwendung (Single Page
-Application) | <a href=
-"https://www.typescriptlang.org/">Typescript</a>, <a href=
-"https://vuejs.org/">Vue.js</a>, <a href=
-"https://vuetifyjs.com/en/">Vuetify</a> | <a href=
-"https://github.com/iris-connect/iris-client/releases">Github</a> |
-| IRIS Client Backend | Backend Komponente für die Webanwendung.
-Kümmert sich um Authentifizierung und Authorisierung, stellte die
-gesicherte Verbindung zu den zentralen und de-zentralen IRIS
-Servicen bereit. | Java, <a href=
-"https://spring.io/projects/spring-boot">Spring Boot</a> | <a href=
-"https://github.com/iris-connect/iris-client/releases">Github</a> |
-| | EPS | Endpunktserver für den Punkt-zu-Punkt Datenübertragung
-der Gästelisten und Kontakttagebüchern | <a href=
-"https://golang.org/">Go</a> | <a href=
-"https://github.com/iris-connect/eps/releases">Github</a> | | Proxy
-| Managed eingehende Verbindungen über Public Proxy. | <a href=
-"https://golang.org/">Go</a> | <a href=
-"https://github.com/iris-connect/eps/releases">Github</a> | | EPS
-(Proxy) | Endpunktserver für Proxy. | <a href=
-"https://golang.org/">Go</a> | <a href=
-"https://github.com/iris-connect/eps/releases">Github</a> |</p>
+<table>
+<thead>
+<tr>
+<th>Komponente</th>
+<th>Beschreibung</th>
+<th>Technologie</th>
+<th>Download</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IRIS Client Frontend</td>
+<td>Statische Web-Anwendung (Single Page Application)</td>
+<td><a href="https://www.typescriptlang.org/">Typescript</a>,
+<a href="https://vuejs.org/">Vue.js</a>, <a href=
+"https://vuetifyjs.com/en/">Vuetify</a></td>
+<td><a href=
+"https://github.com/iris-connect/iris-client/releases">Github</a></td>
+</tr>
+<tr>
+<td>IRIS Client Backend</td>
+<td>Backend Komponente für die Webanwendung. Kümmert sich um
+Authentifizierung und Authorisierung, stellte die gesicherte
+Verbindung zu den zentralen und de-zentralen IRIS Servicen
+bereit.</td>
+<td>Java, <a href="https://spring.io/projects/spring-boot">Spring
+Boot</a></td>
+<td><a href=
+"https://github.com/iris-connect/iris-client/releases">Github</a></td>
+<td></td>
+</tr>
+<tr>
+<td>EPS</td>
+<td>Endpunktserver für den Punkt-zu-Punkt Datenübertragung der
+Gästelisten und Kontakttagebüchern</td>
+<td><a href="https://golang.org/">Go</a></td>
+<td><a href=
+"https://github.com/iris-connect/eps/releases">Github</a></td>
+</tr>
+<tr>
+<td>Proxy</td>
+<td>Managed eingehende Verbindungen über Public Proxy.</td>
+<td><a href="https://golang.org/">Go</a></td>
+<td><a href=
+"https://github.com/iris-connect/eps/releases">Github</a></td>
+</tr>
+<tr>
+<td>EPS (Proxy)</td>
+<td>Endpunktserver für Proxy.</td>
+<td><a href="https://golang.org/">Go</a></td>
+<td><a href=
+"https://github.com/iris-connect/eps/releases">Github</a></td>
+</tr>
+</tbody>
+</table>
 <h3>Folgende Laufzeit-Abhängigkeiten werden vom IRIS Client
 vorausgesetzt.</h3>
-<p>| Laufzeit-Abhängigkeit | Beschreibung | | ---------------------
-|
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| | Postgres DB | Das IRIS Client Backend benutzt eine Postgres
-Datenbank für die a) Verwaltung der Benutzer und b) für die
-Speicherung der offenen Index Fall Anfragen und Ereignis Anfragen |
-| Webserver | Für die Bereistellung vom IRIS Client Frontend über
-eine sichere HTTPS Verbindung wird ein Webserver benötigt. Dieser
-muss in der Lage sein a) Die statische Webanwendung auszuliefern
-und b) API Anfragen an das IRIS Client Backend weiterzuleiten |</p>
+<table>
+<thead>
+<tr>
+<th>Laufzeit-Abhängigkeit</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Postgres DB</td>
+<td>Das IRIS Client Backend benutzt eine Postgres Datenbank für die
+a) Verwaltung der Benutzer und b) für die Speicherung der offenen
+Index Fall Anfragen und Ereignis Anfragen</td>
+</tr>
+<tr>
+<td>Webserver</td>
+<td>Für die Bereistellung vom IRIS Client Frontend über eine
+sichere HTTPS Verbindung wird ein Webserver benötigt. Dieser muss
+in der Lage sein a) Die statische Webanwendung auszuliefern und b)
+API Anfragen an das IRIS Client Backend weiterzuleiten</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>Die Standard-Installationsvariante mit Docker Compose bringt
 bereits ein vorkonfiguriertes Setup inklusive der Postgres DB, dem
@@ -266,38 +307,79 @@ Webserver (nginx) und EPS mit.</p>
 </blockquote>
 <h3>Des Weiteren werden folgende Konfigurations-Abhängigkeiten
 benötigt.</h3>
-<p>| Konfigurations-Abhängigkeit | Beschreibung | |
-------------------------------- |
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| | Domain | Die vom GA bestimmte Domain unter der der IRIS Client
-für die Benutzer erreichbar ist (z.B. iris.bonn.local) | | Domain
-Zertifikat und Schlüssel | Für die o.g. Domain muss ein valides
-Zertifikat inklusive privatem Schlüssel bereitgestellt werden. | |
-GA Client Zertifikat | Der IRIS Client benutzt ein für das GA
-ausgestelltes Client Zertifikat um mit den zentralen IRIS Servicen
-zu kommunizieren. Darüber hinaus werden alle Anfragen die vom IRIS
-Client ausgehen mit dem Zertifikat signiert. Für die Staging
-Umgebung ist der Prozess <a href=
-"Certificate-Process-Staging.md">hier</a> dokumentiert. | | Proxy
-Client Zertifikat | Der proxy benutzt ein für das GA ausgestelltes
-Client Zertifikat um mit den public proxy zu kommunizieren. Das
-Proxy Client Zertifikat ist nicht das selbe wie das GA Client
-Zertifikat. Für die Staging Umgebung ist der Prozess <a href=
-"Certificate-Process-Staging.md">hier</a> dokumentiert. |</p>
+<table>
+<thead>
+<tr>
+<th>Konfigurations-Abhängigkeit</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Domain</td>
+<td>Die vom GA bestimmte Domain unter der der IRIS Client für die
+Benutzer erreichbar ist (z.B. iris.bonn.local)</td>
+</tr>
+<tr>
+<td>Domain Zertifikat und Schlüssel</td>
+<td>Für die o.g. Domain muss ein valides Zertifikat inklusive
+privatem Schlüssel bereitgestellt werden.</td>
+</tr>
+<tr>
+<td>GA Client Zertifikat</td>
+<td>Der IRIS Client benutzt ein für das GA ausgestelltes Client
+Zertifikat um mit den zentralen IRIS Servicen zu kommunizieren.
+Darüber hinaus werden alle Anfragen die vom IRIS Client ausgehen
+mit dem Zertifikat signiert. Für die Staging Umgebung ist der
+Prozess <a href="Certificate-Process-Staging.md">hier</a>
+dokumentiert.</td>
+</tr>
+<tr>
+<td>Proxy Client Zertifikat</td>
+<td>Der proxy benutzt ein für das GA ausgestelltes Client
+Zertifikat um mit den public proxy zu kommunizieren. Das Proxy
+Client Zertifikat ist nicht das selbe wie das GA Client Zertifikat.
+Für die Staging Umgebung ist der Prozess <a href=
+"Certificate-Process-Staging.md">hier</a> dokumentiert.</td>
+</tr>
+</tbody>
+</table>
 <h3>Des Weiteren gibt es folgende infrastrukturelle
 Anhängigkeiten</h3>
-<p>| Infrastruktur-Abhängigkeit | Beschreibung | |
------------------------------------------------------ |
-------------------------------------------------------------------------------------------------------------------------------------
-| | HTTPS Proxy | Proxy server für EPS. Unterstützung für <a href=
+<table>
+<thead>
+<tr>
+<th>Infrastruktur-Abhängigkeit</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTPS Proxy</td>
+<td>Proxy server für EPS. Unterstützung für <a href=
 "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/CONNECT">
-HTTP_CONNECT</a> notwendig. | | Proxy Freischaltung - IRIS Central
-Services - Staging | Zugriff auf iris.staging.iris-gateway.de
-(ConnectPorts: 3322, 4445, 5559, 9999) | | Proxy Freischaltung -
-IRIS App Provider - Staging | Zugriff auf
-*.apps.staging.iris-gateway.de (ConnectPorts: 4444) | | Proxy
-Freischaltung - IRIS Central Services - Live | - (TBD) | | Proxy
-Freischaltung - IRIS App Provider - Live | - (TBD) |</p>
+HTTP_CONNECT</a> notwendig.</td>
+</tr>
+<tr>
+<td>Proxy Freischaltung - IRIS Central Services - Staging</td>
+<td>Zugriff auf iris.staging.iris-gateway.de (ConnectPorts: 3322,
+4445, 5559, 9999)</td>
+</tr>
+<tr>
+<td>Proxy Freischaltung - IRIS App Provider - Staging</td>
+<td>Zugriff auf *.apps.staging.iris-gateway.de (ConnectPorts:
+4444)</td>
+</tr>
+<tr>
+<td>Proxy Freischaltung - IRIS Central Services - Live</td>
+<td>- (TBD)</td>
+</tr>
+<tr>
+<td>Proxy Freischaltung - IRIS App Provider - Live</td>
+<td>- (TBD)</td>
+</tr>
+</tbody>
+</table>
 <h2>Authentifizierung und Authorisierung</h2>
 <p>Aktuell bietet der IRIS client eine eigene Benutzerverwaltung
 an, die von einem IT Administrator betreut werden muss. Das

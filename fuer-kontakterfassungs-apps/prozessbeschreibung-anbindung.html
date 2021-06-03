@@ -215,25 +215,52 @@ corresponding role on the IRIS system.</p>
 <p>Please find below and overview of the IRIS system and its actors
 as well as the flows that are relevant for your application.</p>
 <p><img src="iris-system.jpg" alt="Overview IRIS System"></p>
-<p>|Step|Description| |-|-| |1|You need to send a certificate
-signing request (csr) to the <a href=
-"mailto:rollout@iris-gateway.de">IRIS rollout team</a>. The rollout
-team will provide you with a certificate in return. You need to
-configure your EPS to use that certificate.| |2|The IRIS rollout
-team registers your app and the endpoint domain in the service
-direcory.| |3|Your app pushes the locations for those it is
-responsible for into the central locations service. This is a
-frequent process and depends on the lifecycle of the locations that
-are managed within by app| |4|The health authority employees can
-use the IRIS client (having ints own EPS) in order to search for
-locations.| |5|The IRIS client connects to your app through the EPS
-layer and requests guest lists for a specific date and time. In
-order to know the endpoint IRIS internally keeps a record of which
-location is owned by which app. Your app returns the contact
-information using EPS.|</p>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>You need to send a certificate signing request (csr) to the
+<a href="mailto:rollout@iris-gateway.de">IRIS rollout team</a>. The
+rollout team will provide you with a certificate in return. You
+need to configure your EPS to use that certificate.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>The IRIS rollout team registers your app and the endpoint
+domain in the service direcory.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Your app pushes the locations for those it is responsible for
+into the central locations service. This is a frequent process and
+depends on the lifecycle of the locations that are managed within
+by app</td>
+</tr>
+<tr>
+<td>4</td>
+<td>The health authority employees can use the IRIS client (having
+ints own EPS) in order to search for locations.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The IRIS client connects to your app through the EPS layer and
+requests guest lists for a specific date and time. In order to know
+the endpoint IRIS internally keeps a record of which location is
+owned by which app. Your app returns the contact information using
+EPS.</td>
+</tr>
+</tbody>
+</table>
 <h2>Prerequisites</h2>
 <p>You need to open port 4444 for incoming connections.</p>
 <h2>Request a certificate</h2>
+<h3>Staging server</h3>
 <p>Generate your certificate signing request</p>
 <p>Please use your app name as CN (for example CN=smartmeeting).
 <em>Don't use spaces</em>.</p>
@@ -262,8 +289,16 @@ the comments in the respective files. The certificate issued by us
 and the corresponding key must be stored in the certs folder.</p>
 <p>The settings folder is then referenced in the docker call as
 <code>[your-local-settings-path]</code> as an absolute path.</p>
+<p>Service directory location will be set your settings.yml -
+currently we provide a staging environment service-directory. When
+production is available, you will need to generate new certificates
+and change the service-directory uri.</p>
+<pre><code>directory:
+  settings:
+    endpoints: [ "https://iris.staging.iris-gateway.de:3322/jsonrpc" ]
+</code></pre>
 <p>You can start a local eps with</p>
-<pre><code>docker run --name iris-eps --expose 5556 --expose 4444 -p 5556:5556 -p 4444:4444 -v [your-local-settings-path]:/app/settings -e EPS_SETTINGS=settings/staging/roles/[yourapp] inoeg/eps:v0.0.4 --level trace server run
+<pre><code>docker run --name iris-eps --expose 5556 --expose 4444 -p 5556:5556 -p 4444:4444 -v [your-local-settings-path]:/app/settings -e EPS_SETTINGS=settings/staging/roles/[yourapp] inoeg/eps:v0.1.4 --level trace server run
 </code></pre>
 <p><code>[yourapp]</code> corresponds to the app name you chose for
 CN in your certificate.</p>
@@ -435,9 +470,21 @@ used is <code>[hdEndpoint].submitGuestList</code>.
 <code>[hdEnpoint]</code> corresponds to _client.name from the
 received DataRequest.</p>
 <pre><code>{
-    "requestId": "2edd34d6-bc7b-11eb-8529-0242ac130003",
-    "guestList": 
-        [
+    "dataAuthorizationToken": "2edd34d6-bc7b-11eb-8529-0242ac130003",
+    "guestList": {
+        "dataProvider": {
+            "name": "SmartMeeting",
+            "address": {
+                "street": "Europaplatz",
+                "houseNumber": "5",
+                "zipCode": "64293",
+                "city": "Darmstadt"
+            }
+        },
+        "startDate": "2021-05-18T10:00:00.000Z",
+        "endDate": "2021-05-19T10:00:00.000Z",
+        "additionalInformation": "",
+        "guests": [
             {
                 "firstName": "Hans",
                 "lastName": "Müller",
@@ -446,27 +493,40 @@ received DataRequest.</p>
                 "phone": "0151 47110815",
                 "mobilePhone": "0151 47110815",
                 "address": {
-                  "street": "Lietzensee-Ufer",
-                  "houseNumber": "75",
-                  "zipCode": "01657",
-                  "city": "Meißen"
+                    "street": "Lietzensee-Ufer",
+                    "houseNumber": "75",
+                    "zipCode": "01657",
+                    "city": "Meißen"
                 },
                 "attendanceInformation": {
-                  "attendFrom": "2021-03-28T19:21:28.071Z",
-                  "attendTo": "2021-03-28T19:21:28.071Z",
-                  "additionalInformation": "Tisch 4"
+                    "attendFrom": "2021-03-28T19:21:28.071Z",
+                    "attendTo": "2021-03-28T19:21:28.071Z",
+                    "additionalInformation": "Tisch 4"
                 }
             }
         ]
-  }
+    }
+}
 </code></pre>
 <p>Parameters:</p>
 <p>| Parameter | Description | Annotations | | --- | --- | ---
 |<br>
-| <code>requestId</code> | Authorizes data submission | Equals the
-dataAuthorizationToken from DataRequest. CAUTION: will be renamed
-soon.<br>
-| <code>guestList</code> | Guest list |</p>
+| <code>dataAuthorizationToken</code> | Authorizes data submission
+| | <code>guestList</code> | Guest list information |</p>
+<p>GuestList object:</p>
+<p>| Parameter | Description | Required | Annotations | | --- | ---
+| --- | --- |<br>
+| <code>startDate</code> | GuestList starts | true |<br>
+| <code>endDate</code> | GuestList ends | true | |
+<code>additionalInformation</code> | Additonial information | true
+| Can be left empty for now - is not displayed |
+<code>dataProvider</code> | DataProvider object | true | |
+<code>guests</code> | Guest object | true |</p>
+<p>DataProvider object:</p>
+<p>| Parameter | Description | Required | Annotations | | --- | ---
+| --- | --- |<br>
+| <code>name</code> | Your name | true |<br>
+| <code>address</code> | Address object | true |</p>
 <p>Guest object:</p>
 <p>| Parameter | Description | Required | Annotations | | --- | ---
 | --- | --- |<br>
@@ -493,13 +553,19 @@ City | false |</p>
 information | false | For example table or area</p>
 <h2>Test your implementation</h2>
 <p>To test your implementation, visit <a href=
-"https://iris.staging.iris-gateway.de:9443">https://iris.staging.iris-gateway.de:9443</a></p>
+"https://iris.staging.iris-gateway.de">https://iris.staging.iris-gateway.de</a></p>
 <p>You can find the password and access data in the slack
 channel.</p>
 <p>There you should find your pushed locations in the search when
 you start a new event tracking. If you send the request, you should
 receive a data request.</p>
 <h2>Changelog</h2>
+<h3>[0.0.5] - 2021-06-02</h3>
+<h4>Changed</h4>
+<ul>
+<li>Submit data when accessible in backend</li>
+<li>New eops image version</li>
+</ul>
 <h3>[0.0.4] - 2021-05-20</h3>
 <h4>Added</h4>
 <ul>
