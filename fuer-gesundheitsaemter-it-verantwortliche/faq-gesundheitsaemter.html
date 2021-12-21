@@ -169,9 +169,6 @@ FAQ Gesundheitsämter</a></li>
 "/staging.iris.github.io/fuer-kontakterfassungs-apps/prozessbeschreibung-anbindung">
 Prozessbeschreibung Anbindung</a></li>
 <li><a href=
-"/staging.iris.github.io/fuer-kontakterfassungs-apps/code-of-conduct">
-Code of Conduct</a></li>
-<li><a href=
 "/staging.iris.github.io/fuer-kontakterfassungs-apps/faq-apps">FAQ
 Apps</a></li>
 </ul>
@@ -201,18 +198,18 @@ Code of Conduct</a></li>
 <div class="content">
 <div class="content markdown">
 <h1>FAQ für TechnikerInnen in den Gesundheitsämtern zu
-Funktionsweise, Einrichtung und Betrieb</h1>
+Funktionsweise, Einrichtung und Betrieb von IRIS connect</h1>
 <h2>Funktionsweise</h2>
 <h3>Wo wird verschlüsselt? Wo liegen die Daten?</h3>
 <p>Die Verschlüsselung der personenbezogenen Daten findet direkt in
 der jeweiligen Anwendung statt. Die Entschlüsselung erfolgt im
 IRIS-Client-Backend, also quasi im Gesundheitsamt. Hinzu kommt
 Transportverschlüsselung mittels tls/https.</p>
-<p>Im IRIS-Client liegen die Daten dann unverschlüsselt. Vor der
-Datenabfrage durch ein Gesundheitsamt liegen diese ausschließlich
-bei der App und nicht im IRIS-System. Die Verschlüsselung und
-Entschlüsselung entnehmen Sie auch der Grafik am Anfang des
-Dokuments.</p>
+<p>Im IRIS connect-Client liegen die Daten dann unverschlüsselt.
+Vor der Datenabfrage durch ein Gesundheitsamt liegen diese
+ausschließlich bei der App und nicht im IRIS-System. Die
+Verschlüsselung und Entschlüsselung entnehmen Sie auch der Grafik
+am Anfang des Dokuments.</p>
 <h3>Welche Daten werden übertragen?</h3>
 <p>Hier ist zwischen Kontakttagebüchern und Gästelisten zu
 unterschieden.</p>
@@ -295,7 +292,7 @@ Location</td>
 </tr>
 </tbody>
 </table>
-<h3>Werden die abgerufenen Daten der Apps durch IRIS
+<h3>Werden die abgerufenen Daten der Apps durch IRIS connect
 überprüft/gecheckt/validiert?</h3>
 <p>Eine »input validation« und »input sanitation« sollen
 vorgenommen werden. Hier ist Vorsicht mit den Begrifflichkeiten
@@ -307,12 +304,13 @@ machbar in der Zeit und mit den Ressourcen - Unternehmen der
 Größenordnung Google oder Facebook könnten das).</p>
 <h3>Wie kann sichergestellt werde, dass reale Daten und keine fake
 Daten übertragen werden?</h3>
-<p>Die Plausibilitätsprüfung liegt nicht im Fokus von IRIS, sondern
-muss durch andere Prozesse dargestellt werden, da IRIS die Daten
-selbst nicht einsieht. Eine Plausibilitätsprüfung erfolgt über die
-Gesundheitsamt Mitarbeiter:in im IRIS Client. Darüber hinaus gilt
-für die Locations eine Sorgfaltspflicht bei der Erfassung der
-Gästelisten entsprechend der gültigen Verordnungen.</p>
+<p>Die Plausibilitätsprüfung liegt nicht im Fokus von IRIS connect,
+sondern muss durch andere Prozesse dargestellt werden, da IRIS die
+Daten selbst nicht einsieht. Eine Plausibilitätsprüfung erfolgt
+über die Gesundheitsamt Mitarbeiter:in im IRIS-Client. Darüber
+hinaus gilt für die Locations eine Sorgfaltspflicht bei der
+Erfassung der Gästelisten entsprechend der gültigen
+Verordnungen.</p>
 <h3>Was ist wenn sich jemand nicht ausloggt aus dem Gästebuch -
 können Einrichtungs-Betreibende das manuell machen? Sprich: ist das
 durch Dritte manipulierbar?</h3>
@@ -322,57 +320,22 @@ der Veranstaltung berücksichtigt werden.</p>
 <p>Es findet keine Vorratsspeicherung statt. Die Daten werden nur
 im Bedarfsfall angefragt. Dann wird eine dezentrale Verbindung mit
 dem Client des jeweiligen Gesundheitsamts aufgebaut.</p>
-<h3>Wie sieht die Backup Strategie für IRIS aus?</h3>
+<h3>Wie sieht die Backup Strategie für IRIS connect aus?</h3>
 <p>Die zentralen Strukturen werden redundant betrieben, dort werden
 keine Daten vorgehalten. Daten, die im Gesundheitsamt ankommen
 unterliegen der dortigen Datenhaltung.</p>
-<h3>Ist IRIS 3-Tier fähig?</h3>
+<h3>Ist IRIS connect 3-Tier fähig?</h3>
 <p>Aus Applikations-Sicht spricht nichts dagegen.</p>
-<p>Wie findet die Orchestrierung statt? Über Kubernetes.</p>
+<h3>Wie findet die Orchestrierung statt?</h3>
+<p>Über Kubernetes.</p>
 <h2>Welchen Kundenservice bieten Sie an? Nur per E-Mail oder geht
 es auch telefonisch?</h2>
 <p>Es wird ein Kundenservice über die Dienstleistungs-GmbH der
 Björn Steiger Stiftung angeboten. Dieser beinhaltet ein
 Ticket-System und eine Hotline.</p>
-<h2>Nutzendenverwaltung</h2>
-<h3>Wie findet die Anmeldung für die Anwendung statt?</h3>
-<p>Es gibt eine »klassische« Nutzerverwaltung, d.h.
-NutzerInnenkonten können in IRIS angelegt werden und sich über ein
-Login in der Anwendung anmelden.</p>
-<h3>Wie sieht das Rollen- und Rechtekonzept aus?</h3>
-<p>Siehe Rechtevergabe. Grundsätzlich dürfen angemeldete Nutzende
-Anfragen stellen und die erhaltenen Daten verarbeiten.</p>
-<h3>Wie ist die Rechtevergabe für Mitarbeiter?</h3>
-<p>'Link zu Dokumentation der Nutzendenverwaltung folgt'</p>
-<h3>Welche Schutzmechanismen nutzt IRIS?</h3>
-<p>Schutzmechanismen werden im Rahmen eines Open Development
-Prozesses implementiert. Unter anderem werden wir voraussichtlich
-den OWASP Katalog abarbeiten (s. Injection Prevention Cheat Sheet).
-Weiteres ist auch im IT-Sicherheitskonzept ausgeführt.</p>
-<h2>Bedienung</h2>
-<h3>Wie intuitiv ist die Bedienung von IRIS?</h3>
-<p>Ziel ist es, die Bedienung so intuitiv wie möglich zu gestalten.
-Das Feedback im Rahmen von Tests in Gesundheitsämtern war allgemein
-sehr positiv.</p>
-<h3>Wie wird die Usability auf Seiten der Gesundheitsämter
-sichergestellt? Können z.B. Feature-Wünsche, bzw. Änderungswünsche
-zurückgespielt werden?</h3>
-<p>Grundsätzlich besteht ein hohes Interesse an einer bestmöglichen
-Nutzbarkeit. Dazu wurden bereits mehrere Gespräche und Tests mit
-Gesundheitsämtern durchgeführt. IRIS wird im sogenannten
-Open-Development-Prozess entwickelt. Es können also direkt
-Feature-Requests gestellt und innerhalb der Community diskutiert
-werden. Falls weitere Features gewünscht werden, können diese auch
-extern beauftragt werden. Diese Module werden dann ebenfalls
-Open-Source bereitgestellt und können von allen genutzt werden.</p>
-<h3>Gibt es einen Barrierefreiheits-Test nach BITV (Standard nach
-welchen Kriterien Barrierefreiheits-Tests erfolgen soll)?</h3>
-<p>Zunächst nicht. Ziel ist es, im Zuge der Pandemie zunächst
-schnell eine Lösung bereitzustellen. Im weiteren Verlauf der
-Entwicklung wird dies natürlich berücksichtigt werden.</p>
-<h2>Einrichtung</h2>
-<h3>Kann ein Gesundheitsamt die IRIS Anwendung käuflich erwerben
-oder geht dies über das Land?</h3>
+<h2>Einrichtung, Installation</h2>
+<h3>Kann ein Gesundheitsamt die IRIS connect Anwendung käuflich
+erwerben oder geht dies über das Bundesland?</h3>
 <p>Die Software wird Open Source betrieben, d.h. es fallen keine
 Lizenzkosten an. Für den Produktivbetrieb im Gesundheitsamt ist ein
 Zertifikat der Bundesdruckerei notwendig. Die Björn Steiger
@@ -383,9 +346,26 @@ Bundesland getroffen wurde, können diese Leistungen direkt über die
 Dienstleistungs-GmbH erworben werden. Empfohlen wird jedoch ein
 Ankauf über die Länder.</p>
 <h3>Wie wird der Client installiert?</h3>
-<p>Die Installationsanleitung für den Client wird im öffentlichen
-Repositorium einsehbar sein. (Link zur Ìnstallationsanleitung
-folgt)</p>
+<p>Die <a href=
+"https://github.com/iris-connect/iris-documentation/blob/main/use_iris_as_Gesundheitsamt/GA_Installationsanleitung.md">
+Installationsanleitung</a> für den Client ist öffentlich verfügbar.
+Es gibt zwei Varianten, einmal als Docker Compose Installation,
+einmal als Stand-Alone Installation. Wir empfehlen die Docker
+Compose Installation, da dies die Konfiguration deutlich
+vereinfacht.</p>
+<p>Außerdem werden für den Betrieb Zertifikate benötigt. Der
+Prozess wird ebenfalls im Rahmen der <a href=
+"https://github.com/iris-connect/iris-documentation/blob/main/use_iris_as_Gesundheitsamt/GA_Installationsanleitung.md">
+Installationsanleitung</a> beschrieben.</p>
+<p>Wir haben die Dokumente so untereinander verlinkt, dass Sie
+Schritt für Schritt durch den Prozess geführt werden.</p>
+<p>Der Startpunkt für die Installation ist unter <a href=
+"https://github.com/iris-connect/iris-documentation/blob/main/use_iris_as_Gesundheitsamt/GA_Installationsanleitung.md">
+Installationsanleitung</a> zu finden.</p>
+<h3>Gibt es ein HELM chart oder ein docker-compose manifest?</h3>
+<p>Ja, es gibt ein docker manifest, dieses wird im öffentlichen
+Repositorium bereitgestellt. <code>Link zu HELM chart
+folgt</code></p>
 <h3>Muss für jedes Gesundheitsamt ein Client im Rechenzentrum
 betrieben werden oder liegt die Clientbereitstellung bei den GAs
 und diese nutzen die zentralen Strukturen?</h3>
@@ -402,8 +382,8 @@ kommunizieren mit den App Providern und der Location Suche per gRPC
 über eine mTLS-Verbindung.</p>
 <h3>Welche Betriebssysteme werden unterstützt?</h3>
 <p>Nur relevant für Betriebsmodus »Java«. Jedes System das Open JDK
-unterstützt ist geeignet. Die aktuelle IRIS Staging Umgebung läuft
-auf Ubuntu LTS.</p>
+unterstützt ist geeignet. Die aktuelle IRIS connect Staging
+Umgebung läuft auf Ubuntu LTS.</p>
 <h3>Welches Java wird für die Lizenzerklärung verwendet?</h3>
 <p>OpenJDK. Corretto wäre alternativ auch möglich.</p>
 <h3>Wie groß sollte die Datenbank für singuläre Strukturen und die
@@ -421,29 +401,32 @@ auf VMs betrieben werden. Beispiel: 4 VMs, 2 Core, 16 GB RAM.</p>
 möglich.</p>
 <h3>Wie bekommte ich das entsprechende Zertifikat für die
 Registrierung eines Gesundheitsamtes?</h3>
-<p>Es gibt einen gesonderten Prozeß, der die Bestellung und
-Einrichtung des Zertifikats von der Bundesdruckerei
-(Public-Key-Infrastruktur, PKI) beschreibt. Der Prozess ist in der
-Installationsanleitung beschrieben.</p>
+<p>Es gibt einen gesonderten Prozeß, der die <a href=
+"https://github.com/iris-connect/iris-client/blob/develop/infrastructure/deployment/docs/Certificate-Process_Prod_organizational.md">
+Bestellung und Einrichtung des Zertifikats</a> von der
+Bundesdruckerei (Public-Key-Infrastruktur, PKI) beschreibt. Der
+Prozess ist in der <a href=
+"https://github.com/iris-connect/iris-client/blob/develop/infrastructure/deployment/docs/Certificate-Process_Prod_organizational.md">
+Installationsanleitung-Zertifikate</a> beschrieben.</p>
 <h3>Wird für die Pilotierung Java oder Container System
 genutzt?</h3>
 <p>In der Pilotierung werden Container für das Staging System
 genutzt, wir sind aber offen für andere Vorschläge.</p>
-<h3>Wer stellt das »IRIS Onboarding Team« zur Unterstützung bei der
-Einrichtung eines neuen Gesundheitsamtes?</h3>
-<p>Das »IRIS Onboarding Team« wird aktuell aus einem Teil des
-Kern-Teams des IRIS Projekts gebildet. Wir stehen mit weiteren
-Partnern in Kontakt, die entsprechende Personalkapazitäten aufbauen
-bzw. vorhalten.</p>
+<h3>Wer stellt das »IRIS connect Onboarding Team« zur Unterstützung
+bei der Einrichtung eines neuen Gesundheitsamtes?</h3>
+<p>Das »IRIS connect Onboarding Team« wird aktuell aus einem Teil
+des Kern-Teams des IRIS connect Projekts gebildet. Wir stehen mit
+weiteren Partnern in Kontakt, die entsprechende Personalkapazitäten
+aufbauen bzw. vorhalten.</p>
 <h3>Mit der Vorgabe vom BSI "Nur eine Applikation pro Server"
 müssten für den GA Client mindestens zwei Server plus DB Server
 genutzt werden – oder?</h3>
-<p>Nein, das IRIS-Client-Frontend und IRIS-Client-Backend können zu
-einer Applikation zusammengezogen werden. Ob gleiches auch für die
-Datenbank gilt, hängt von der genauen Ausgestaltung der Vorgabe
-ab.</p>
+<p>Nein, das IRIS connect-Client-Frontend und IRIS
+connect-Client-Backend können zu einer Applikation zusammengezogen
+werden. Ob gleiches auch für die Datenbank gilt, hängt von der
+genauen Ausgestaltung der Vorgabe ab.</p>
 <h2>Betrieb</h2>
-<h3>Wie wird IRIS betrieben?</h3>
+<h3>Wie wird IRIS connect betrieben?</h3>
 <p>Bestimmte Teile der Infrastruktur müssen nur einmal betrieben
 werden. Eine länderübergreifende Bereitstellung dieser Teile ist
 jedoch abhängig von politischen Entscheidung und muss im Rahmen der
@@ -463,17 +446,32 @@ Kontaktpersonen pro Fall) und eher niedriger 7-Tage-Inzidenz
 83.000 Kontaktdatensätze.</p>
 <h3>Wer übernimmt den Support für die lokalen
 Gesundheitsämter?</h3>
-<p>Das Betriebsmodell muss noch final geklärt werden. Die
-Dienstleistungs-GmbH der Björn Steiger Stiftung kann entsprechende
-Strukturen für den Support der kommunalen verantwortlichen
-IT-Stelle bereitstellen. Gleiches gilt für die Betreuung von
-Rollout und Installation.</p>
-<h3>Woher kennt IRIS die verschiebenden Apps/Anbieter?</h3>
+<p>Es gibt verschiedene Modelle. Für den Verfahrensbetrieb wurden
+bisher Verträge auf Bundeslandsebene geschlossen. Es gibt aber auch
+ein Modell für einzelne Gesundheitsämter. Wenn Sie interessse haben
+IRIS connect zu verwenden, wenden Sie sich bitte an <a href=
+"mailto:info@iris-connect.de">info@iris-connect.de</a>.</p>
+<p>Die zentralen Services werden von der AKDB betrieben, mit der
+ebenfalls ein Vertrag abgeschlossen werden muss.</p>
+<p>Die Dienstleistungs-GmbH der Björn Steiger Stiftung kann
+entsprechende Strukturen für den Support der kommunalen
+verantwortlichen IT-Stelle bereitstellen. Gleiches gilt für die
+Betreuung von Rollout und Installation. Bitte wenden Sie sich als
+Gesundheitsamt an Ihre kommunale IT-Stelle, die entweder bereits
+Zugang zu den Supportstrukturen hat, oder Schritte für die
+Einrichtung einleiten kann.</p>
+<p>Für den Rollout im Gesundheitsamt können wir ebenso
+entsprechende Unternehmen benennen. Bitte schreiben Sie uns an
+<a href=
+"mailto:hallo@iris-connect.de">hallo@iris-connect.de</a>.</p>
+<h3>Woher kennt IRIS connect die verschiebenden Apps/Anbieter?</h3>
 <p>Apps/Anbieter sind über Client Zertifikate eindeutig zuordenbar.
 Es gibt einen Onboarding Prozess, der die Bereitstellung
 verschiedener relevanter Dokumente erfordert. Außerdem werden
 entsprechende zu integrierende Komponente zur Verfügung gestellt.
-Das Prozedere ist im Repositorium beschrieben.</p>
+Das Prozedere ist <a href=
+"https://github.com/iris-connect/iris-documentation/blob/main/connect_your_app_to_IRIS/Connect_App_to_IRIS_administration.md">
+im Repositorium beschrieben</a>.</p>
 <h3>Wie wird mit Updates umgegangen? Wie funktioniert der
 Prozess?</h3>
 <p>Zuständigkeiten und Vorgehen sind aktuell noch in der Klärung.
@@ -482,13 +480,14 @@ jeweiligen Kommunen abhängig.</p>
 <h3>Wie werden Images bereitgestellt?</h3>
 <p>Über ein öffentliches Docker-Repository. Alternativ können sie
 auch direkt aus dem Source-Code erstellt werden.</p>
-<h3>Wie werden die Zertifikate des IRIS Client verwaltet?</h3>
+<h3>Wie werden die Zertifikate des IRIS connect Client
+verwaltet?</h3>
 <p>Die Verwaltung der Zertifikate ist aktuell noch in Klärung,
 diese werden aber durch einen Dienstleister zur Verfügung gestellt.
 Hier ist aktuell vorgesehen, diese alle 12 Monate zu erneuern.
 Weitere Fragen zum Prozess werden beim Onboarding geklärt.</p>
 <h3>Was für Proxies werden für den Zugriff auf die singulären
-Komponentenverwendet?</h3>
+Komponenten verwendet?</h3>
 <p><code>wird nachgereicht</code></p>
 <h3>Was für Proxies werden für den Zugriff auf den Client
 verwendet?</h3>
@@ -502,40 +501,81 @@ gegenüber dem Internal Reverse-Proxy authentifizieren, kann der
 Internal Reverse-Proxy öffentlich aus dem Internet zugänglich sein.
 Ein zusätzlicher Schutz per Firewall/VPN kann aber auch hinzugefügt
 werden.</p>
-<h3>Besteht die Gefahr, dass durch die IRIS-Plattform SORMAS
-infiltriert werden kann?</h3>
-<p>Grundsätzlich besteht diese Gefahr immer (auch Microsoft
-Exchange Server hatten Lücken). Wir können allerdings nach Best
-Practices arbeiten um die Wahrscheinlichkeit durch diverse
-Maßnahmen (s. oben) zu senken. Zudem wird für den Import zunächst
-noch eine .csv-Datei verwendet, die nicht Ende-zu-Ende
-durchgereicht, sondern erst innerhalb des IRIS Client generiert
-wird. Sollten die Daten eines Anbieters infiltriert werden, dann
-wird das beim Entpacken vom IRIS Client geblockt.</p>
-<h3>Sind „Injections” möglich?</h3>
-<p>Grundsätzlich besteht diese Gefahr immer. Es gibt Best Practice
-Gegenmaßnahmen die vermutlich eingebaut werden können (s. erste
-Frage). Auch im erweiterten toolkit. package size checkes etc.
-Durch die innerhalb IRIS stattfindende Generierung der csv-Datei
-vor dem Durchreichen in die Fachanwendung ist eine Art Firewall
-implementiert.</p>
 <h3>Gibt es ein Datenbankmodell oder ERM?</h3>
 <p><code>Wird nachgereicht und offen in der Dokumentation
 dargestellt</code></p>
 <h3>Wie sieht es mit der Redundanz aus?</h3>
 <p>Das sollte bei Kubernetes kein Problem darstellen. Diese Art der
 Architektur ist inhärent eben sehr robust konzipiert.</p>
-<h3>Gibt es ein HELM chart oder ein docker-compose manifest?</h3>
-<p>Ja, es gibt ein docker manifest, dieses wird im öffentlichen
-Repositorium bereitgestellt. <code>Link zu HELM chart
-folgt</code></p>
 <h3>Ergänzung zur PKI: Wird eine Certificate Revokation List (CRL)
 gepflegt/genutzt, um die Nutzung kompromittierter Zertifikate zu
 unterbinden?</h3>
 <p>Ja.</p>
+<h2>Kontoverwaltung</h2>
+<h3>Wie findet die Anmeldung für die Anwendung statt?</h3>
+<p>Es gibt eine »klassische« Kontoverwaltung, d.h. Konten können in
+IRIS angelegt werden und sich über ein Login in der Anwendung
+anmelden.</p>
+<h3>Wie sieht das Rollen- und Rechtekonzept aus?</h3>
+<p>Grundsätzlich dürfen angemeldete Nutzende Anfragen stellen und
+die erhaltenen Daten verarbeiten. Die Administration kann Konten
+verwalten (hizufügen, sperren, etc.). Dies wird auch in der
+<a href="https://uploads-ssl.webflow.com/609e55b08d9aef989925de0d/60c87415c75c1da665d3f7aa_IRIS%20Benutzeranleitung%20v.1.pdf#h.glxi0fl9hydj">
+Bedienungsanleitung, S.5 ff.</a> beschrieben.</p>
 <h3>Wird SORMAS mit Keycloak eingesetzt?</h3>
-<p>SORMAS wird idR mit Keycloak eingesetzt. Diese Infrastruktur
-kann auch von IRIS mitgenutzt werden.</p>
+<p>IRIS connect hat derzeit ausschließlich seine eigene
+Nutzerverwaltung.</p>
+<h2>Bedienung</h2>
+<h3>Wie intuitiv ist die Bedienung von IRIS connect?</h3>
+<p>Ziel ist es, die Bedienung so intuitiv wie möglich zu gestalten.
+Das Feedback im Rahmen von Tests in Gesundheitsämtern war allgemein
+sehr positiv.</p>
+<h3>Wie wird die Usability auf Seiten der Gesundheitsämter
+sichergestellt? Können z.B. Feature-Wünsche, bzw. Änderungswünsche
+zurückgespielt werden?</h3>
+<p>Grundsätzlich besteht ein hohes Interesse an einer bestmöglichen
+Nutzbarkeit. Dazu wurden bereits mehrere Gespräche und Tests mit
+Gesundheitsämtern durchgeführt. IRIS wird im sogenannten
+Open-Development-Prozess entwickelt. Es können also direkt
+Feature-Requests gestellt und innerhalb der Community diskutiert
+werden. Falls weitere Features gewünscht werden, können diese auch
+extern beauftragt werden. Diese Module werden dann ebenfalls
+Open-Source bereitgestellt und können von allen genutzt werden.</p>
+<h3>Gibt es einen Barrierefreiheits-Test nach BITV (Standard nach
+welchen Kriterien Barrierefreiheits-Tests erfolgen soll)?</h3>
+<p>Zunächst nicht. Ziel ist es, im Zuge der Pandemie zunächst
+schnell eine Lösung bereitzustellen. Im weiteren Verlauf der
+Entwicklung wird dies natürlich berücksichtigt werden.</p>
+<h2>IT-Sicherheit</h2>
+<h3>Wo finde ich das IT-Sicherheitskonzept von IRIS connect?</h3>
+<p><a href=
+"https://github.com/iris-connect/iris-security/tree/master/Doc%20Sicherheitskonzept">
+Hier</a></p>
+<h3>Welche Schutzmechanismen nutzt IRIS connect?</h3>
+<p>Schutzmechanismen werden im Rahmen eines Open Development
+Prozesses implementiert. Unter anderem wird der <a href=
+"https://owasp.org/www-community/attacks/">OWASP Katalog</a>
+abgearbeitet. Weiteres ist auch im <a href=
+"https://github.com/iris-connect/iris-security/tree/master/Doc%20Sicherheitskonzept">
+IT-Sicherheitskonzept</a> ausgeführt.</p>
+<h3>Besteht die Gefahr, dass durch die IRIS connect-Plattform
+SORMAS infiltriert werden kann?</h3>
+<p>Grundsätzlich besteht diese Gefahr immer (auch Microsoft
+Exchange Server hatten Lücken). Wir können allerdings nach Best
+Practices arbeiten um die Wahrscheinlichkeit durch diverse
+Maßnahmen (s. oben) zu senken. Zudem wird für den Import zunächst
+noch eine .csv-Datei verwendet, die nicht Ende-zu-Ende
+durchgereicht, sondern erst innerhalb des IRIS connect Client
+generiert wird. Sollten die Daten eines Anbieters infiltriert
+werden, dann wird das beim Entpacken vom IRIS connect Client
+geblockt.</p>
+<h3>Sind „Injections” möglich?</h3>
+<p>Grundsätzlich besteht diese Gefahr immer. Es gibt Best Practice
+Gegenmaßnahmen die vermutlich eingebaut werden können (s. erste
+Frage). Auch im erweiterten toolkit. package size checkes etc.
+Durch die innerhalb IRIS connect stattfindende Generierung der
+csv-Datei vor dem Durchreichen in die Fachanwendung ist eine Art
+Firewall implementiert.</p>
 </div>
 </div>
 </section>

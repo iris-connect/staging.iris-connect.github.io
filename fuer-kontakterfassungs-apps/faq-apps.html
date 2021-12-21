@@ -168,9 +168,6 @@ data-target="page-tracing-apps-nav">Für Kontakterfassungs-Apps</a>
 "/staging.iris.github.io/fuer-kontakterfassungs-apps/prozessbeschreibung-anbindung">
 Prozessbeschreibung Anbindung</a></li>
 <li><a href=
-"/staging.iris.github.io/fuer-kontakterfassungs-apps/code-of-conduct">
-Code of Conduct</a></li>
-<li><a href=
 "/staging.iris.github.io/fuer-kontakterfassungs-apps/faq-apps">FAQ
 Apps</a></li>
 </ul>
@@ -199,47 +196,49 @@ Code of Conduct</a></li>
 <section class="section first">
 <div class="content">
 <div class="content markdown">
-<h1>FAQs (App-Anbieter)</h1>
+<h1>Häufig gestellte Fragen von App-Anbieter</h1>
 <h2>Gibt es für jedes GA eine eindeutige Reference?</h2>
 <p>Ja, jedes GA wird eindeutig authentifizierbar sein. Dies wird
 durch Verwendung eines Zertifikats der Bundesdruckerei
 gewährleistet.</p>
-<h2>Wie kann man sich an IRIS andocken?</h2>
+<h2>Wie kann man sich an IRIS connect andocken?</h2>
 <p>Es wird einen Onboarding Prozess geben. Davor werden Dokumente
 wie IT-Sicherheitskonzept und Datenschutzkonzept angefordert
-werden. Diese müssen vorliegen, IRIS wird diese nicht prüfen, aber
-auf Verlangen der zuständigen Stellen herausgeben. Außerdem muss
-ein Whitepaper, das die Funktion und den Grund für den Betrieb bzw.
-das sammeln der Daten beschreibt, veröffentlicht werden.</p>
-<p>Der Code of Conduct (CoC)gibt hier weitere Details, ist
+werden. Diese müssen vorliegen, IRIS connect wird diese nicht
+prüfen, aber auf Verlangen der zuständigen Stellen herausgeben.
+Außerdem muss ein Whitepaper, das die Funktion und den Grund für
+den Betrieb bzw. das sammeln der Daten beschreibt, veröffentlicht
+werden.</p>
+<p>Der Code of Conduct (CoC) gibt hier weitere Details, ist
 allerdings noch nicht final. Der CoC wird sich an den Kriterien von
 D64 orientierten. Open Source ist kein muss, aber schön. Zur
-Kommunikation mit den IRIS Diensten stellen wir einen Service
-bereit, der in der Infrastruktur des Anbieters ohne weitere
+Kommunikation mit den IRIS connect Diensten stellen wir einen
+Service bereit, der in der Infrastruktur des Anbieters ohne weitere
 Abhängigkeiten betrieben werden kann. Details zur Implementierung
 veröffentlichen wir über ein GitHub Repository.</p>
-<p><code>Link zum Repo folgt</code> <code>Link zum Onboarding Guide
-für GAs folgt</code></p>
-<h2>Was muss ich als App-Anbieter tun, um meine App an IRIS
+<p><a href=
+"https://github.com/iris-connect/iris-documentation/blob/main/connect_your_app_to_IRIS/technical_details/app_onboarding.md">
+Connect your app to IRIS connect</a></p>
+<h2>Was muss ich als App-Anbieter tun, um meine App an IRIS connect
 technisch anzubinden?</h2>
-<p>IRIS besteht technisch aus mehreren Modulen. Das relevante Modul
-für die Integration der Apps in IRIS ist der EPS (EndPointService).
-Der Provider "hostet" sich selbst einen internen EPS (kommt aus dem
-IRIS Projekt) und muss auf seiner Seite einen JSON-RPC Client und
-einen Server (Endpoint) implementieren. Die Adresse des internen
-Servers wird beim internen EPS hinterlegt. Kommt dann am EPS eine
-Anfrage des GA an, spricht der EPS den internen JSON-RPC Endpunkt
-an.</p>
+<p>IRIS connect besteht technisch aus mehreren Modulen. Das
+relevante Modul für die Integration der Apps in IRIS ist der EPS
+(EndPointService). Der Provider "hostet" sich selbst einen internen
+EPS (kommt aus dem IRIS Projekt) und muss auf seiner Seite einen
+JSON-RPC Client und einen Server (Endpoint) implementieren. Die
+Adresse des internen Servers wird beim internen EPS hinterlegt.
+Kommt dann am EPS eine Anfrage des GA an, spricht der EPS den
+internen JSON-RPC Endpunkt an.</p>
 <p>Der EPS bietet selbst auch einen JSON-RPC Server an, den der
 Provider über seinen internen Client bedient. So können Requests an
 die anderen Akteure versendet werden.</p>
 <h2>Wie kommt die Datenabfrage eines Gesundheitsamtes beim
 App-Anbieter oder beim Betreiber an? Gibt es ein Portal dafür?</h2>
-<p>IRIS bietet mit dem IRIS-Client ein Portal für die
-Gesundheitsämter. Apps werden nur über technische Schnittstellen
-angebunden. Das bedeutet, dass Benachrichtigungen sowie nötige
-Interaktionen durch die jeweilige App erfolgen müssen. Da es
-verschiedene Konzepte gibt, wie die Apps die Daten speichern
+<p>IRIS connect bietet mit dem IRIS connect-Client ein Portal für
+die Gesundheitsämter. Apps werden nur über technische
+Schnittstellen angebunden. Das bedeutet, dass Benachrichtigungen
+sowie nötige Interaktionen durch die jeweilige App erfolgen müssen.
+Da es verschiedene Konzepte gibt, wie die Apps die Daten speichern
 (zentral oder dezentral) und verschlüsseln (symmetrisch oder
 asymmetrisch) bzw. wie die Schlüssel verwaltet werden (PKI,
 manuell, etc.) kann keine allgemeingültige Aussage über den Ablauf
@@ -265,8 +264,8 @@ Client abgefragt und entschlüsselt werden, um sie dann wieder mit
 dem GA Schlüssel verschlüsselt an den App-Server zu übertragen</li>
 <li>App-Server leitet die verschlüsselten Daten an den EPS
 weiter</li>
-<li>EPS leitet die Daten an den IRIS-Client des Gesundheitsamtes
-(dieser Schritt ist stark vereinfacht...)</li>
+<li>EPS leitet die Daten an den IRIS connect-Client des
+Gesundheitsamtes (dieser Schritt ist stark vereinfacht...)</li>
 </ul>
 <h3>2. Lösung mit durch den App-Anbieter verwalteten privaten
 Schlüsseln:</h3>
@@ -286,8 +285,8 @@ weiter</li>
 <li>EPS leitet die Daten an den IRIS-Client des Gesundheitsamtes
 (dieser Schritt ist stark vereinfacht...)</li>
 </ul>
-<h2>Kann ich als Unternehmen auch die IRIS Lizenz für den Kreis
-bezahlen, die sonst vom GA getragen müsste?</h2>
+<h2>Kann ich als Unternehmen auch die IRIS connect Lizenz für den
+Kreis bezahlen, die sonst vom GA getragen müsste?</h2>
 <p>Die Software wird Open Source betrieben und generell
 unentgeltlich zur Verfügung gestellt. Daher fallen keine
 Lizenzkosten an. Für die Gesundheitsämter bzw. deren koordinierende
@@ -302,7 +301,7 @@ jederzeit heruntergeladen, installiert und getestet werden. Zum
 Produktivbetrieb im Gesundheitsamt ist allerdings ein Zertifikat
 erforderlich, welches im Rahmen des Pflegevertrages für die Dauer
 von 12 Monaten zur Verfügung gestellt wird.</p>
-<h2>Was zahle ich als App für die Anbindung an IRIS?</h2>
+<h2>Was zahle ich als App für die Anbindung an IRIS connect?</h2>
 <p>Als Anbieter einer digitalen Lösung zur Kontaktdatenverfolgung
 zahlst Du nichts für die Anbindung – Du musst diese aber selbst
 durchführen. Für Deine Anbindung sind bestimmte Anforderungen zu
@@ -312,17 +311,18 @@ Dokumentation der Voraussetzungen zur Anbindung befindet sich
 hier.</p>
 <p><code>Link zu Github Anbieter API folgt</code></p>
 <h2>Gibt es Standardanschreiben für GAs für die Vorstellung von
-IRIS?</h2>
-<p>Es gibt ein “Erklär-Dokument” zu IRIS, welches wir zur Verfügung
-stellen können. Wir weisen darauf hin, dass sich das Dokument
-regelmäßig aktualisieren kann. Außerdem stellen wir Dir gerne ein
-paar leicht verständliche Folien mit einem typischen
-Einsatzszenario für IRIS vor. Daneben gibt es eine Internetseite zu
-IRIS, die das Thema verständlich aufbereitet. In Kürze sind dort
-auch Presseberichte zu IRIS hinterlegt. Weitergehende technische
-Informationen für die Gesundheitsämter werden aktuell erarbeitet
-und finden sich bald im GitHub-Repo.</p>
-<h2>Wie lange gilt die GA Lizenz von IRIS?</h2>
+IRIS connect?</h2>
+<p>Es gibt ein “Erklär-Dokument” zu IRIS connect, welches wir zur
+Verfügung stellen können. Wir weisen darauf hin, dass sich das
+Dokument regelmäßig aktualisieren kann. Außerdem stellen wir Dir
+gerne ein paar leicht verständliche Folien mit einem typischen
+Einsatzszenario für IRIS connect vor. Daneben gibt es eine
+Internetseite zu IRIS connect, die das Thema verständlich
+aufbereitet. In Kürze sind dort auch Presseberichte zu IRIS connect
+hinterlegt. Weitergehende technische Informationen für die
+Gesundheitsämter werden aktuell erarbeitet und finden sich bald im
+GitHub-Repo.</p>
+<h2>Wie lange gilt die GA Lizenz von IRIS connect?</h2>
 <p>Die Software wird Open Source betrieben und generell
 unentgeltlich zur Verfügung gestellt. Daher fallen keine
 Lizenzkosten an, noch gibt es eine Lizenzdauer oder -gültigkeit.
@@ -331,72 +331,77 @@ Zertifikat der Bundesdruckerei möglich, welches jeweils eine
 Gültigkeit von 12 Monaten besitzt. Ebenfalls zeitlich begrenzt ist
 der optionale Support- und Pflegevertrag. Weitere Informationen
 hierzu finden sich im GitHub-Repo.</p>
-<h2>Kann man über IRIS auch Registrierte Gäste mit einem Knopfdruck
-via sms kontaktieren?</h2>
-<p>Nein, das ist nicht auf Seiten IRIS geplant. Diese Funktion
-könnte theoretisch auf Seiten der Anbieter der digitalen Lösung zur
-Kontaktdatenerfassung implementiert sein, um Gäste über eine
-Übermittlung ihrer Daten an ein Gesundheitsamt per SMS zu
-informieren. IRIS übermittelt die Daten zur Weiterbearbeitung an
-die IfSG Fachanwendung - dort können die nächsten Aufgaben geplant
-werden.</p>
+<h2>Kann man über IRIS connect auch Registrierte Gäste mit einem
+Knopfdruck via SMS kontaktieren?</h2>
+<p>Nein, das ist nicht auf Seiten IRIS connect geplant. Diese
+Funktion könnte theoretisch auf Seiten der Anbieter der digitalen
+Lösung zur Kontaktdatenerfassung implementiert sein, um Gäste über
+eine Übermittlung ihrer Daten an ein Gesundheitsamt per SMS zu
+informieren. IRIS connect übermittelt die Daten zur
+Weiterbearbeitung an die IfSG Fachanwendung, die in den
+Gesundheitsämtern betrieben werden - dort können die nächsten
+Aufgaben geplant werden.</p>
 <h2>Gibt es PPT Vorlagen zum bearbeiten bei dem ich das eigene App
 Logo einbinden kann?</h2>
 <p>Wir stellen Dir gerne ein paar leicht verständliche Folien mit
-einem typischen Einsatzszenario für IRIS zur Verfügung, die Du in
-Deine eigene Präsentation integrieren kannst.</p>
-<h2>Wo finde ich die technische Dokumentation von IRIS?</h2>
-<p>Hier gibt es mehrere Quellen. * Wird im IRIS Konzept Dokument
-drauf eingegangen. Siehe Frage nach “Standardanschreiben für GAs
-für die Vorstellung von IRIS”. * API Dokumentation auf Github *
-Sicherheitskonzept Ordner auf Github</p>
+einem typischen Einsatzszenario für IRIS connect zur Verfügung, die
+Du in Deine eigene Präsentation integrieren kannst.</p>
+<h2>Wo finde ich die technische Dokumentation von IRIS
+connect?</h2>
+<p>Hier gibt es mehrere Quellen. * Wird im IRIS connect Konzept
+Dokument drauf eingegangen. Siehe Frage nach “Standardanschreiben
+für GAs für die Vorstellung von IRIS connect”. * API Dokumentation
+auf Github * Sicherheitskonzept Ordner auf Github</p>
 <h2>Muss man als App Anbieter Open Source sein oder reicht es, wenn
-IRIS selbst Open Source ist?</h2>
+IRIS connect selbst Open Source ist?</h2>
 <p>Nein, man muss die eigene Lösung nicht Open Source anbieten.
 Open Source wird aber grundsätzlich präferiert, denn durch Open
 Source können andere peers den Code anschauen und mögliche
 Sicherheitslücken identifizieren (Peer-Review). Viele Lösungen sind
 jedoch in andere proprietäre Systeme eingebunden, daher ist das
-nicht immer möglich. Nichtsdetotrotz haben wir seitens IRIS ein
-paar Regeln definiert, die vor einer Anbindung erfüllt sein müssen.
-Wir gehen auf den Aspekt im Code of Conduct ein.</p>
+nicht immer möglich. Nichtsdetotrotz haben wir seitens IRIS connect
+ein paar Regeln definiert, die vor einer Anbindung erfüllt sein
+müssen. Wir gehen auf den Aspekt im Code of Conduct ein.</p>
 <h2>Sollte es eine koordinierte Kontaktaufnahme zu GAs geben oder
 kann das jeder App Anbieter einzeln tun?</h2>
-<p>Hinter IRIS gibt es kein “Vertriebskonzept” und auch keine
-Vertriebsorganisation, die vor Ort die GAs vom Einsatz überzeugen
-möchte. IRIS ist Open Source, wird unentgeltlich zur Verfügung
-gestellt und ist einfach notwendig, um digital erfasste
-Kontaktdaten von einer Vielzahl Anbieter sicher ins Gesundheitsamt
-zu übertragen. Sicherlich sind häufig mehrere Lösungsanbieter
-nebeneinander in einer Kommune aktiv - genau das ist die Idee
-hinter IRIS: Es müssen/können/dürfen nicht alle Betriebe innerhalb
-einer Region mit der gleichen Lösung arbeiten. Uns ist bewusst,
-dass viele Gesundheitsämter direkt mit den Lösungsanbietern vor Ort
-sprechen, die hauptsächlich in der lokalen Wirtschaft im Einsatz
-sind. Hier stellen wir sehr gerne Kommunikationsmaterial zur
-Verfügung, damit IRIS einheitlich und abgestimmt vorgestellt werden
-kann, wenn die Frage nach der Datenübermittlung gestellt wird.</p>
+<p>Hinter IRIS connect gibt es kein “Vertriebskonzept” und auch
+keine Vertriebsorganisation, die vor Ort die GAs vom Einsatz
+überzeugen möchte. IRIS connect ist Open Source, wird unentgeltlich
+zur Verfügung gestellt und ist einfach notwendig, um digital
+erfasste Kontaktdaten von einer Vielzahl Anbieter sicher ins
+Gesundheitsamt zu übertragen. Sicherlich sind häufig mehrere
+Lösungsanbieter nebeneinander in einer Kommune aktiv - genau das
+ist die Idee hinter IRIS connect: Es müssen/können/dürfen nicht
+alle Betriebe innerhalb einer Region mit der gleichen Lösung
+arbeiten. Uns ist bewusst, dass viele Gesundheitsämter direkt mit
+den Lösungsanbietern vor Ort sprechen, die hauptsächlich in der
+lokalen Wirtschaft im Einsatz sind. Hier stellen wir sehr gerne
+Kommunikationsmaterial zur Verfügung, damit IRIS connect
+einheitlich und abgestimmt vorgestellt werden kann, wenn die Frage
+nach der Datenübermittlung gestellt wird.</p>
 <h2>Gibt es einen CSV Export aus dem IRIS Client?</h2>
-<p>Ja, IRIS ermöglicht zum einen eine direkte Weiterverarbeitung
-der ausgewählten Daten in SORMAS oder alternativ einen CSV-Export
-zur Weiterbearbeitung in beliebigen anderen IfSG Fachanwendungen.
-Da IRIS eine Open Source Lösung ist, können natürlich auch weitere
-direkte Integrationen neben SORMAS entstehen.</p>
+<p>Ja, IRIS connect ermöglicht zum einen eine direkte
+Weiterverarbeitung der ausgewählten Daten in SORMAS oder alternativ
+einen CSV-Export zur Weiterbearbeitung in beliebigen anderen IfSG
+Fachanwendungen. Da IRIS connect eine Open Source Lösung ist,
+können natürlich auch weitere direkte Integrationen neben SORMAS
+entstehen.</p>
 <h2>Wie werden Menschen ohne Smartphone abgeholt?</h2>
 <p>IRIS ist nicht die Lösung zur Kontaktdatenerfassung - sondern
 nur der digitale, sichere Weg bereits erfasster Daten – in die
 Gesundheitsämter hinein. Ob die Daten z.B. durch den Wirt
 eingetragen oder vom Gast per Handykamera, Webformular oder App
 erfasst wurden, spielt keine Rolle.</p>
-<h2>Ist IRIS exklusiv?</h2>
+<h2>Ist IRIS connect exklusiv?</h2>
 <p>Die Software wird Open Source betrieben. Die Nutzungsrechte sind
 ausführlich im GitHub-Repository beschrieben.</p>
 <h2>Nachprüfungsverfahren der Luca vergabe pro Bundesland - wie
 kann man sich beteiligen?</h2>
-<p>Dies ist keine IRIS relevante Frage. Aber ganz generell gilt:
-IRIS ist keine konkurrierende Anwendung zu Luca, sondern spannt ein
-Dach auf, unter dem Lösungen aus den verschiedensten
-Anwendungsbereichen ihre Daten zur Verfügung stellen können.</p>
+<p>Dies ist keine IRIS connect relevante Frage. Aber ganz generell
+gilt: IRIS connect ist keine konkurrierende Anwendung zu Luca,
+sondern spannt ein Dach auf, unter dem Lösungen aus den
+verschiedensten Anwendungsbereichen ihre Daten zur Verfügung
+stellen können.</p>
 <h2>Wer ist die Björn Steiger Stiftung?</h2>
 <p>Die Björn Steiger Stiftung ist eine gemeinnützige Stiftung
 bürgerlichen Rechts - und seit Ende der 1960er unterwegs mit der

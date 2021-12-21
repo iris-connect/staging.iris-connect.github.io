@@ -169,9 +169,6 @@ FAQ Gesundheitsämter</a></li>
 "/staging.iris.github.io/fuer-kontakterfassungs-apps/prozessbeschreibung-anbindung">
 Prozessbeschreibung Anbindung</a></li>
 <li><a href=
-"/staging.iris.github.io/fuer-kontakterfassungs-apps/code-of-conduct">
-Code of Conduct</a></li>
-<li><a href=
 "/staging.iris.github.io/fuer-kontakterfassungs-apps/faq-apps">FAQ
 Apps</a></li>
 </ul>
@@ -200,25 +197,25 @@ Code of Conduct</a></li>
 <section class="section first">
 <div class="content">
 <div class="content markdown">
-<h1>Client Installation</h1>
-<p>Der IRIS Client ist der Teil vom IRIS Ecosystem, der auf einem
-Server im Gesundheitsamt (bzw. beim IT Dienstleiser) installiert
+<h1>IRIS-Client Installation</h1>
+<p>Der IRIS-Client ist der Teil vom IRIS Ecosystem, der auf einem
+Server im Gesundheitsamt (bzw. beim IT-Dienstleister) installiert
 wird und die Kernfunktionalitäten für Endbenutzer zur Verfügung
 stellt.</p>
 <h2>Architektur</h2>
-<p><a href="./Architektur.md">Hier geht es weiter</a></p>
+<p><a href="./Architektur.md">Architekturbeschreibung</a></p>
 <h2>Systemvoraussetzungen</h2>
-<p>Für den Betrieb aller Komponenten des IRIS Clients empfehlen wir
-folgende Server Dimension:</p>
+<p>Für den Betrieb aller Komponenten des IRIS-Clients empfehlen wir
+folgende Serverdimensionierung:</p>
 <pre><code>VM mit 2 vCores, 16 GB Ram und 20 GB Storage
 </code></pre>
-<p>Aus technischer Perspektive können alle IRIS Komponenten auf dem
-selben Server betrieben werden.</p>
+<p>Aus technischer Perspektive können alle IRIS-Komponenten auf
+demselben Server betrieben werden.</p>
 <h2>Umgebungen</h2>
 <p>IRIS stellt zwei Umgebungen bereit. Staging zum Testen und Live
 für den Produktionsbetrieb mit echten Daten.</p>
-<h2>IRIS Client Komponenten und Abhängigkeiten</h2>
-<h3>Folgende Komponenten werden vom IRIS Team bereit gestellt.</h3>
+<h2>IRIS-Client Komponenten und Abhängigkeiten</h2>
+<h3>Folgende Komponenten werden vom IRIS Team bereitgestellt.</h3>
 <table>
 <thead>
 <tr>
@@ -239,10 +236,10 @@ für den Produktionsbetrieb mit echten Daten.</p>
 "https://github.com/iris-connect/iris-client/releases">Github</a></td>
 </tr>
 <tr>
-<td>IRIS Client Backend</td>
-<td>Backend Komponente für die Webanwendung. Kümmert sich um
-Authentifizierung und Authorisierung, stellte die gesicherte
-Verbindung zu den zentralen und de-zentralen IRIS Servicen
+<td>IRIS Client BFF</td>
+<td>Backend for Frontend Komponente für die Webanwendung. Kümmert
+sich um Authentifizierung und Authorisierung, stellt die gesicherte
+Verbindung zu den zentralen und dezentralen IRIS Teilnehmern
 bereit.</td>
 <td>Java, <a href="https://spring.io/projects/spring-boot">Spring
 Boot</a></td>
@@ -251,7 +248,7 @@ Boot</a></td>
 <td></td>
 </tr>
 <tr>
-<td>EPS</td>
+<td>EPS ( IRIS Client BFF )</td>
 <td>Endpunktserver für den Punkt-zu-Punkt Datenübertragung der
 Gästelisten und Kontakttagebüchern</td>
 <td><a href="https://golang.org/">Go</a></td>
@@ -259,22 +256,24 @@ Gästelisten und Kontakttagebüchern</td>
 "https://github.com/iris-connect/eps/releases">Github</a></td>
 </tr>
 <tr>
-<td>Proxy</td>
-<td>Managed eingehende Verbindungen über Public Proxy.</td>
+<td>Private Proxy</td>
+<td>Verwaltet eingehende Verbindungen über Public Proxy.</td>
 <td><a href="https://golang.org/">Go</a></td>
 <td><a href=
 "https://github.com/iris-connect/eps/releases">Github</a></td>
 </tr>
 <tr>
-<td>EPS (Proxy)</td>
-<td>Endpunktserver für Proxy.</td>
+<td>EPS ( Private Proxy )</td>
+<td>Endpunktserver vom Private Proxy. Wird benutzt, um eigehende
+Verbindung z.B. für die Übermittlung von Kontakttagebüchern
+anzukündigen.</td>
 <td><a href="https://golang.org/">Go</a></td>
 <td><a href=
 "https://github.com/iris-connect/eps/releases">Github</a></td>
 </tr>
 </tbody>
 </table>
-<h3>Folgende Laufzeit-Abhängigkeiten werden vom IRIS Client
+<h3>Folgende Laufzeit-Abhängigkeiten werden vom IRIS-Client
 vorausgesetzt.</h3>
 <table>
 <thead>
@@ -286,16 +285,23 @@ vorausgesetzt.</h3>
 <tbody>
 <tr>
 <td>Postgres DB</td>
-<td>Das IRIS Client Backend benutzt eine Postgres Datenbank für die
-a) Verwaltung der Benutzer und b) für die Speicherung der offenen
-Index Fall Anfragen und Ereignis Anfragen</td>
+<td>Das IRIS-Client Backend benutzt eine Postgres Datenbank für die
+a) Verwaltung der Konten und b) für die Speicherung der offenen
+Indexfall-Anfragen und Ereignis-Anfragen</td>
 </tr>
 <tr>
 <td>Webserver</td>
-<td>Für die Bereistellung vom IRIS Client Frontend über eine
+<td>Für die Bereitstellung vom IRIS-Client Frontend über eine
 sichere HTTPS Verbindung wird ein Webserver benötigt. Dieser muss
 in der Lage sein a) Die statische Webanwendung auszuliefern und b)
-API Anfragen an das IRIS Client Backend weiterzuleiten</td>
+API Anfragen an das IRIS-Client Backend weiterzuleiten</td>
+</tr>
+<tr>
+<td>HTTPS Proxy ( Optional )</td>
+<td>Proxy Server für EPS Kommunikation. Unterstützung für <a href=
+"https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/CONNECT">
+HTTP_CONNECT</a> notwendig. Dies ist nicht notwendig, sollte Ihr
+Server direkte Firewall Freischaltungen ins Internet besitzen.</td>
 </tr>
 </tbody>
 </table>
@@ -304,8 +310,8 @@ API Anfragen an das IRIS Client Backend weiterzuleiten</td>
 bereits ein vorkonfiguriertes Setup inklusive der Postgres DB, dem
 Webserver (nginx) und EPS mit.</p>
 </blockquote>
-<h3>Des Weiteren werden folgende Konfigurations-Abhängigkeiten
-benötigt.</h3>
+<h3>Folgende Zertifikate werden für die externe Kommunikation
+benötigt:</h3>
 <table>
 <thead>
 <tr>
@@ -315,82 +321,152 @@ benötigt.</h3>
 </thead>
 <tbody>
 <tr>
-<td>Domain</td>
-<td>Die vom GA bestimmte Domain unter der der IRIS Client für die
-Benutzer erreichbar ist (z.B. iris.bonn.local)</td>
+<td>Zertifikat der internen Web Domain</td>
+<td>Der IRIS Client wird in der Regel unter einer GA internen
+Domain bereit gestellt. Für diese Domain muss ein valides
+Zertifikat inklusive privatem Schlüssel konfiguriert werden.</td>
 </tr>
 <tr>
-<td>Domain Zertifikat und Schlüssel</td>
-<td>Für die o.g. Domain muss ein valides Zertifikat inklusive
-privatem Schlüssel bereitgestellt werden.</td>
-</tr>
-<tr>
-<td>GA Client Zertifikat</td>
-<td>Der IRIS Client benutzt ein für das GA ausgestelltes Client
-Zertifikat um mit den zentralen IRIS Servicen zu kommunizieren.
-Darüber hinaus werden alle Anfragen die vom IRIS Client ausgehen
-mit dem Zertifikat signiert. Für die Staging Umgebung ist der
-Prozess <a href="Certificate-Process-Staging.md">hier</a>
+<td>TLS-Zertifikat - Private Proxy</td>
+<td>Ein TLS-Zertifikat für den IRIS Private Proxy des GA. Identität
+des GA im Internet mit dem Ziel, Kontakttagebücher und Gästelisten
+direkt ins GA zu übermitteln (TLS/HTTPS). Der Ausstellungs-Prozess
+für die <strong>Staging Umgebung</strong> ist <a href=
+"Certificate-Process-Staging.md">hier</a> dokumentiert. Der
+Ausstellungs-Prozess für die <strong>Live Umgebung</strong> ist
+<a href="Certificate-Process_Prod_technical.md">hier</a>
 dokumentiert.</td>
 </tr>
 <tr>
-<td>Proxy Client Zertifikat</td>
-<td>Der proxy benutzt ein für das GA ausgestelltes Client
-Zertifikat um mit den public proxy zu kommunizieren. Das Proxy
-Client Zertifikat ist nicht das selbe wie das GA Client Zertifikat.
-Für die Staging Umgebung ist der Prozess <a href=
-"Certificate-Process-Staging.md">hier</a> dokumentiert.</td>
+<td>mTLS-Zertifikat - EPS ( IRIS Client BFF )</td>
+<td>Der IRIS-Client benutzt ein für das GA ausgestelltes mTLS
+Zertifikat, um mit den zentralen IRIS Services zu kommunizieren.
+Darüber hinaus werden alle Anfragen, die vom IRIS-Client ausgehen,
+mit dem Zertifikat signiert. Der Ausstellungs-Prozess für die
+<strong>Staging Umgebung</strong> ist <a href=
+"Certificate-Process-Staging.md">hier</a> dokumentiert. Der
+Ausstellungs-Prozess für die <strong>Live Umgebung</strong> ist
+<a href="Certificate-Process_Prod_technical.md">hier</a>
+dokumentiert.</td>
+</tr>
+<tr>
+<td>mTLS-Zertifikat - EPS ( IRIS Private Proxy )</td>
+<td>Der Proxy benutzt ein für das GA ausgestelltes mTLS Zertifikat,
+um mit dem public-Proxy zu kommunizieren und eingehende
+Verbindungen, z.B. zum Übertragen von Kontakttagebüchern,
+zuzulassen. Der Ausstellungs-Prozess für die <strong>Staging
+Umgebung</strong> ist <a href=
+"Certificate-Process-Staging.md">hier</a> dokumentiert. Der
+Ausstellungs-Prozess für die <strong>Live Umgebung</strong> ist
+<a href="Certificate-Process_Prod_technical.md">hier</a>
+dokumentiert.</td>
 </tr>
 </tbody>
 </table>
-<h3>Des Weiteren gibt es folgende infrastrukturelle
-Anhängigkeiten</h3>
+<blockquote>
+<p>In der Live Umgebung handelt es sich bei den beiden EPS
+Zertifikaten um das gleiche Zertifikat.</p>
+</blockquote>
+<h3>Des Weiteren gibt es folgende Kommunikationsverbindungen</h3>
+<blockquote>
+<p>Diese Verbindungen müssen sowohl bei direkter als auch bei
+indirekter Kommunkation ( via Proxy ) erlaubt werden.</p>
+</blockquote>
 <table>
 <thead>
 <tr>
-<th>Infrastruktur-Abhängigkeit</th>
-<th>Beschreibung</th>
+<th>Service</th>
+<th>Umgebung</th>
+<th>Ziel-Host</th>
+<th>Ziel-Ports</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>HTTPS Proxy</td>
-<td>Proxy server für EPS. Unterstützung für <a href=
-"https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/CONNECT">
-HTTP_CONNECT</a> notwendig.</td>
+<td>IRIS Service Directory</td>
+<td>staging</td>
+<td>test.iris-gateway.de</td>
+<td>32324</td>
 </tr>
 <tr>
-<td>Proxy Freischaltung - IRIS Central Services - Staging</td>
-<td>Zugriff auf iris.staging.iris-gateway.de (ConnectPorts: 3322,
-4445, 5559, 9999)</td>
+<td>IRIS Locations Service</td>
+<td>staging</td>
+<td>test.iris-gateway.de</td>
+<td>32323</td>
 </tr>
 <tr>
-<td>Proxy Freischaltung - IRIS App Provider - Staging</td>
-<td>Zugriff auf *.apps.staging.iris-gateway.de (ConnectPorts:
-4444)</td>
+<td>IRIS Public Proxy</td>
+<td>staging</td>
+<td>test.iris-gateway.de</td>
+<td>32326, 32327</td>
 </tr>
 <tr>
-<td>Proxy Freischaltung - IRIS Central Services - Live</td>
-<td>- (TBD)</td>
+<td>IRIS Connected Apps</td>
+<td>staging</td>
+<td>*.apps.test.iris-gateway.de</td>
+<td>4443, 4444, 443</td>
 </tr>
 <tr>
-<td>Proxy Freischaltung - IRIS App Provider - Live</td>
-<td>- (TBD)</td>
+<td>IRIS Service Directory</td>
+<td>live</td>
+<td>prod.iris-gateway.de</td>
+<td>32324</td>
+</tr>
+<tr>
+<td>IRIS Locations Service</td>
+<td>live</td>
+<td>prod.iris-gateway.de</td>
+<td>32323</td>
+</tr>
+<tr>
+<td>IRIS Public Proxy</td>
+<td>live</td>
+<td>prod.iris-gateway.de</td>
+<td>32326, 32327</td>
+</tr>
+<tr>
+<td>IRIS Connected Apps</td>
+<td>live</td>
+<td>*.apps.prod.iris-gateway.de</td>
+<td>4444, 443</td>
 </tr>
 </tbody>
 </table>
 <h2>Authentifizierung und Authorisierung</h2>
-<p>Aktuell bietet der IRIS client eine eigene Benutzerverwaltung
-an, die von einem IT Administrator betreut werden muss. Das
+<p>Aktuell bietet der IRIS-Client eine eigene Kontoverwaltung an,
+die von der IT-Administration betreut werden muss. Das
 Startpasswort für den Admin Account kann beim erstmaligen Starten
 gesetzt werden (siehe <a href=
 "../.env.sample">.env.sample</a>).</p>
-<h2>IRIS Client - Installation Stand-Alone</h2>
-<p><a href="./Installation-Standalone.md">Hier geht es
-weiter.</a></p>
-<h2>IRIS Client - Installation mit Docker Compose</h2>
-<p><a href="./Installation-Docker-Compose.md">Hier geht es
-weiter.</a></p>
+<h2>IRIS-Client - Docker Compose Installation</h2>
+<p>Bei dieser Installationsvariante werden alle Komponenten vom
+IRIS Client in virtuellen Containern gestartet. Diese Container
+sind vom IRIS Team vorkonfiguriert und müssen um GA individuelle
+Parameter ergänzt werden.</p>
+<blockquote>
+<p>Diese Installationsart ist empfohlen.</p>
+</blockquote>
+<p><a href="./Installation-Docker-Compose.md">Docker Compose
+Installation</a></p>
+<h2>IRIS-Client - Stand-Alone Installation</h2>
+<p>Bei dieser Installationsvariante werden alle Komponenten vom
+IRIS Client von einem lokalen Administrator installiert und um
+individuelle Parameter ergänzt. Die Komponenten werden vom IRIS
+Team über Github zum Download bereitgestellt.</p>
+<blockquote>
+<p>Diese Installationsart ist aufgrund der komplexen Konfiguration
+NICHT empfohlen.</p>
+</blockquote>
+<p><a href="../../stand-alone-deployment/README.md">Stand-Alone
+Installation</a></p>
+<h2>Testen der Installation</h2>
+<p>Unabhängig von der Installations Variante können Sie testen, ob
+die Installation erfolgreich war.</p>
+<p><a href="Smoketest.md">Test</a></p>
+<h2>Upgrade Guides</h2>
+<p>Unabhängig von der Installations Variante finden Sie hier
+Informationen über Upgrades auf eine neue Version.</p>
+<p><a href="Upgrade-Guides.md">Upgrade Guides</a></p>
 </div>
 </div>
 </section>
